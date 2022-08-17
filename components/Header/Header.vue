@@ -1,17 +1,17 @@
 <template>
-    <div class="header-fon">
+    <div class="header">
        <div class="px-20 font-circe">
         <div class="flex justify-between items-center pt-7 mb-32">
-            <div class="logo">
+            <div>
                 <img v-bind:src="require('@/static/img/header-navigation-logo.svg')" />
             </div>
-            <div class="">
+            <div>
                 <ul class="font-bold text-lg">
-                    <li class="inline-block mr-12"><a href="#">Адреса</a></li>
-                    <li class="inline-block mr-12"><a href="#">Магазины</a></li>
-                    <li class="inline-block mr-12"><a href="#">Как это работает</a></li>
-                    <li class="inline-block mr-12"><a href="#">Тарифы</a></li>
-                    <li class="inline-block mr-12"><a href="#">Услуги</a></li>
+                    <li class="navbar"><a href="#">Адреса</a></li>
+                    <li class="navbar"><a href="#">Магазины</a></li>
+                    <li class="navbar"><a href="#">Как это работает</a></li>
+                    <li class="navbar"><a href="#">Тарифы</a></li>
+                    <li class="navbar"><a href="#">Услуги</a></li>
                     <li class="inline-block"><a href="#">Доставка</a></li>
                 </ul>
             </div>
@@ -21,15 +21,23 @@
                 </button>
             </div>
         </div>
-        <div class="flex flex-col justify-start mb-20">
+        <div class="flex flex-col justify-start pb-20">
             <p class="uppercase font-extrabold leading-23 text-7xl tracking-wide max-w-2xl mb-12">зарубежный sale</p>
             <p class="font-bold text-2xl max-w-xs mb-44">Выгодные онлайн покупки за рубежом с быстрой доставкой</p>
-            <button class="btn-title bg-greenbasic max-w-xs border-0 rounded-full font-bold text-center px-4 py-2">
-                <p class="btn-title-text text-white">Получить адрес за рубежом</p>
+            <button class="btn-title">
+                <p class="btn-title-text">Получить адрес за рубежом</p>
             </button>
         </div>
-        <div>
-
+        <div class="flex justify-around">
+            <div v-for="(benefit, index) in benefits" :key="`benefit-${index}`" class="advantage">
+                <div>
+                    
+                </div>
+                <div>
+                    <span>{{ benefit.title }}</span>
+                    <span>{{ benefit.description }}</span>
+                </div>                
+            </div>
         </div>
     </div> 
     </div>
@@ -38,27 +46,44 @@
 </template>
 
 <script>
-
 export default {
-    name: 'Header',
+    data: () => ({
+        benefits: [
+            {title: 'Быстрая доставка', description: 'Выбирайте для доставки удобный пункт выдачи или доставку курьером', img: },
+            {title: 'Бесплатная упаковка', description: 'Экономьте за счет уменьшения веса и объема посылки до 80%'},
+            {title: 'Бесплатная консолидация', description: 'Объединяйте несколько посылок в одну для экономии на доставке'}
+        ]
+    })
 }
 </script>
 
 <style scoped>
-.header-fon {
+.header {
     background-image: url('static/img/header-fon.png');
     background-size: cover;
 }
+
+.navbar {
+    @apply inline-block mr-12;
+}
+
 .btn-personal-area {
     @apply text-center border border-greenbasic rounded-full font-bold px-4 py-2;
-};
-.btn-personal-area {
+}
+
+.btn-personal-area-text {
     @apply text-base text-center; 
-};
+}
+
 .btn-title {
-    @apply border-0 rounded-full font-bold text-center max-w-xs px-4 py-2;
-};
+    @apply bg-greenbasic max-w-xs border-0 rounded-full font-bold text-center px-4 py-2;
+}
+
 .btn-title-text {
-    @apply text-center text-2xl;
-};
+    @apply text-center text-xl leading-8 text-white;
+}
+
+.advantage {
+    @apply flex;
+}
 </style>
