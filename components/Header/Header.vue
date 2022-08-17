@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .btn-personal-area {
-    @apply font-bold text-base text-center text-[#00833E] border border-[#00833E] rounded-[80px];
+    @apply font-bold text-base text-center text-['green basic'] border border-['green basic'] rounded-[80px];
 };
 
 </style>
