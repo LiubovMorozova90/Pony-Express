@@ -3,7 +3,7 @@
         <div class="logo">
         </div>
         <div class="navigation">
-            <ul>
+            <ul class="inline-block">
                 <li>Адреса</li>
                 <li>Магазины</li>
                 <li>Как это работает</li>
@@ -13,7 +13,9 @@
             </ul>
         </div>
         <div>
-            <button class="btn-personal-area">Личный кабинет</button>
+            <button class="btn-personal-area">
+                <p class="btn-personal-area-text">Личный кабинет</p>
+            </button>
         </div>
     </div>
 </template>
@@ -27,7 +29,10 @@ export default {
 
 <style scoped>
 .btn-personal-area {
-    @apply font-bold text-base text-center text-['green basic'] border border-['green basic'] rounded-[80px];
+    @apply text-center border rounded-full font-bold px-4 py-2;
+};
+.btn-personal-area {
+    @apply text-base text-center; 
 };
 
 </style>
