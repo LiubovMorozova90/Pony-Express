@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <header class="header">
        <div class="px-20">
         <div class="flex justify-between items-center pt-7 mb-32">
             <div>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div> 
-    </div>
+    </header>
     
     
 </template>
