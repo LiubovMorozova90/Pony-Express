@@ -28,14 +28,14 @@
                 <p class="btn-title-text">Получить адрес за рубежом</p>
             </button>
         </div>
-        <div class="flex justify-around">
+        <div class="flex gap-32 pb-32">
             <div v-for="(benefit, index) in benefits" :key="`benefit-${index}`" class="advantage">
-                <div>
-                    
+                <div class="w-22 h-22">
+                    <img :src="benefit.img" />
                 </div>
-                <div>
-                    <span>{{ benefit.title }}</span>
-                    <span>{{ benefit.description }}</span>
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl leading-7 mb-3">{{ benefit.title }}</span>
+                    <span class="font-normal text-lg leading-6 max-w-xs">{{ benefit.description }}</span>
                 </div>                
             </div>
         </div>
@@ -49,9 +49,18 @@
 export default {
     data: () => ({
         benefits: [
-            {title: 'Быстрая доставка', description: 'Выбирайте для доставки удобный пункт выдачи или доставку курьером', img: },
-            {title: 'Бесплатная упаковка', description: 'Экономьте за счет уменьшения веса и объема посылки до 80%'},
-            {title: 'Бесплатная консолидация', description: 'Объединяйте несколько посылок в одну для экономии на доставке'}
+            {title: 'Быстрая доставка', 
+            description: 'Выбирайте для доставки удобный пункт выдачи или доставку курьером', 
+            img: require('~/static/img/delivery.svg')
+            },
+            {title: 'Бесплатная упаковка', 
+            description: 'Экономьте за счет уменьшения веса и объема посылки до 80%', 
+            img: require('~/static/img/package.svg')
+            },
+            {title: 'Бесплатная консолидация', 
+            description: 'Объединяйте несколько посылок в одну для экономии на доставке', 
+            img: require('~/static/img/consolidation.svg')
+            }
         ]
     })
 }
@@ -84,6 +93,6 @@ export default {
 }
 
 .advantage {
-    @apply flex;
+    @apply flex gap-4;
 }
 </style>
