@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         greenbasic: '#00833E',
+        white: '#FFFFFF',
       },
       fontFamily:  {
         circe: 'Circe',
