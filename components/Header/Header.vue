@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-       <div class="px-20 font-circe">
+       <div class="px-20">
         <div class="flex justify-between items-center pt-7 mb-32">
             <div>
                 <img v-bind:src="require('@/static/img/header-navigation-logo.svg')" />
@@ -28,13 +28,13 @@
                 <p class="btn-title-text">Получить адрес за рубежом</p>
             </button>
         </div>
-        <div class="flex gap-32 pb-32">
-            <div v-for="(benefit, index) in benefits" :key="`benefit-${index}`" class="advantage">
+        <div class="flex justify-between items-start pb-32">
+            <div v-for="(benefit, index) in benefits" :key="`benefit-${index}`" class="advantage w-1/4">
                 <div class="w-22 h-22">
                     <img :src="benefit.img" />
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl leading-7 mb-3">{{ benefit.title }}</span>
+                    <span v-html="benefit.title" class="flex flex-col font-bold text-2xl leading-7 mb-3" />
                     <span class="font-normal text-lg leading-6 max-w-xs">{{ benefit.description }}</span>
                 </div>                
             </div>
@@ -49,15 +49,15 @@
 export default {
     data: () => ({
         benefits: [
-            {title: 'Быстрая доставка', 
+            {title: 'Быстрая <br /> доставка', 
             description: 'Выбирайте для доставки удобный пункт выдачи или доставку курьером', 
             img: require('~/static/img/delivery.svg')
             },
-            {title: 'Бесплатная упаковка', 
+            {title: 'Бесплатная <br /> упаковка', 
             description: 'Экономьте за счет уменьшения веса и объема посылки до 80%', 
             img: require('~/static/img/package.svg')
             },
-            {title: 'Бесплатная консолидация', 
+            {title: 'Бесплатная <br /> консолидация', 
             description: 'Объединяйте несколько посылок в одну для экономии на доставке', 
             img: require('~/static/img/consolidation.svg')
             }
@@ -77,7 +77,7 @@ export default {
 }
 
 .btn-personal-area {
-    @apply text-center border border-greenbasic rounded-full font-bold px-4 py-2;
+    @apply text-center font-bold border border-greenbasic rounded-full px-4 py-2;
 }
 
 .btn-personal-area-text {
@@ -85,7 +85,7 @@ export default {
 }
 
 .btn-title {
-    @apply bg-greenbasic max-w-xs border-0 rounded-full font-bold text-center px-4 py-2;
+    @apply font-bold text-center border-0 rounded-full bg-greenbasic max-w-xs px-4 py-2;
 }
 
 .btn-title-text {
