@@ -7,7 +7,7 @@ module.exports = {
         greenbasic: '#00833E',
       },
       fontFamily:  {
-        circe: 'CirceBold',
+        circe: 'Circe',
       }
     }
   }
