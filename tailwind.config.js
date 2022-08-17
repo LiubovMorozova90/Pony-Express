@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'green basic': '#00833E',
+        greenbasic: '#00833E',
+      },
+      fontFamily:  {
+        circe: 'CirceBold',
       }
     }
   }

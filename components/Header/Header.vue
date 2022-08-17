@@ -1,6 +1,6 @@
 <template>
-    <div class="mx-20">
-        <div class="flex justify-between items-center mt-7 mb-30">
+    <div class="mx-20 font-circe">
+        <div class="flex justify-between items-center mt-7 mb-32">
             <div class="logo">
                 <img v-bind:src="require('@/static/img/header-navigation-logo.png')" />
             </div>
@@ -21,9 +21,9 @@
             </div>
         </div>
         <div class="flex flex-col justify-start mb-20">
-            <p class="uppercase font-extrabold text-7.5xl tracking-wide max-w-2xl mb-12">зарубежный sale</p>
-            <p class="font-bold text-2.5xl leading-7 max-w-xs mb-46">Выгодные онлайн покупки за рубежом с быстрой доставкой</p>
-            <button class="btn-title">
+            <p class="uppercase font-extrabold leading-23 text-7xl tracking-wide max-w-2xl mb-12">зарубежный sale</p>
+            <p class="font-bold text-2xl mb-46">Выгодные онлайн покупки за рубежом с быстрой доставкой</p>
+            <button class="btn-title bg-greenbasic">
                 <p class="btn-title-text">Получить адрес за рубежом</p>
             </button>
         </div>
