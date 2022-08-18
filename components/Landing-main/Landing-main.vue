@@ -45,7 +45,7 @@
             <div class="flex px-20 pt-12">
                 <img v-bind:src="require('@/static/img/info-forwarding-img.png')" />
                 <div class="flex flex-col bg-white px-20 py-12">
-                    <p class="font-extrabold text-7xl tracking-wide">Как работает Mail Forwarding</p>
+                    <p class="font-extrabold text-7xl tracking-wide max-w-xl">Как работает Mail Forwarding</p>
                     <div>
                         <img />
                         <span></span>
@@ -65,6 +65,16 @@ export default {
             {img: require('~/static/img/slider-shop-ebay.svg')},
             {img: require('~/static/img/slider-shop-levi.svg')},
             {img: require('~/static/img/slider-shop-6pm.svg')},
+        ],        
+        forwardings: [
+            {description: 'Цена в России «кусается», а при заказе из другой страны товар не доставляют на Ваш домашний адрес?', 
+            img: require('~/static/img/info-forwarding-1.svg')},
+            {description: 'Предоставим бесплатно почтовый адрес за рубежом, на который онлайн-магазин сможет отправить Ваш товар', 
+            img: require('~/static/img/info-forwarding-2.svg')},
+            {description: 'Проверим и упакуем все ваши заказы, приходящие на этот адрес, в одну посылку.', 
+            img: require('~/static/img/info-forwarding-3.svg')},
+            {description: 'Отправим товары к вам домой или в пункт выдачи без переплат по выгодной цене', 
+            img: require('~/static/img/info-forwarding-4.svg')},
         ]
     })
 }
