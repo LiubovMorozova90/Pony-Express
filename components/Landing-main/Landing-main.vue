@@ -21,10 +21,10 @@
         </div> 
         <div class="info-shop">
             <div class="flex flex-col px-20 pt-12">
-                <div class="flex items-center text-white pb-20">
-                    <p class="font-extrabold text-7xl tracking-wide ">Популярные магазины</p>
-                    <p class="font-bold text-2xl leading-8">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
-                    <button class="text-center border rounded-full w-60 px-4 py-2">
+                <div class="flex justify-between gap-10 items-center text-white pb-20">
+                    <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
+                    <p class="font-bold text-2xl leading-8 max-w-md">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
+                    <button class="text-center border rounded-full w-60 px-4 py-2 mt-28">
                         <span class="font-bold text-base text-center">Получить адрес за рубежом</span>
                     </button>
                 </div>
