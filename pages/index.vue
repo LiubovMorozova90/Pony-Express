@@ -1,6 +1,6 @@
 <template>
   <div class="font-circe">
-    <Header ></Header>
+    <Header></Header>
     <LandingMain></LandingMain>
   </div>  
 </template>
