@@ -28,7 +28,14 @@
                         <span class="font-bold text-base text-center">Получить адрес за рубежом</span>
                     </button>
                 </div>
-                <div></div>
+                <div>
+                    <div v-for="(shop, index) in shops" :key="`shop-${index}`" >
+                        <div class="flex">
+                            <img :src="shop.img" />
+                        </div>
+                    </div>
+                    <button></button>
+                </div>
                 <div></div>
             </div>
         </div>       
@@ -38,9 +45,12 @@
 <script>
 export default {
     data: () => ({
-        shops: {
-            
-        }
+        shops: [
+            {img: require('~/static/img/slider-shop-amazon.svg')},
+            {img: require('~/static/img/slider-shop-ebay.svg')},
+            {img: require('~/static/img/slider-shop-levi.svg')},
+            {img: require('~/static/img/slider-shop-6pm.svg')},
+        ]
     })
 }
 </script>
