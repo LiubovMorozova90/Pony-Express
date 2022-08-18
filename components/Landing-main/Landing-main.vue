@@ -35,6 +35,17 @@
     </main>
 </template>
 
+<script>
+export default {
+    data: () => ({
+        shops: {
+            
+        }
+    })
+}
+</script>
+
+
 <style scoped>
 .info-delivery {
     background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
