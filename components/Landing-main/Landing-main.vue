@@ -28,13 +28,16 @@
                         <span class="font-bold text-base text-center">Получить адрес за рубежом</span>
                     </button>
                 </div>
-                <div>
-                    <div v-for="(shop, index) in shops" :key="`shop-${index}`" >
-                        <div class="flex">
-                            <img :src="shop.img" />
-                        </div>
-                    </div>
-                    <button></button>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center mb-10">
+                       <div v-for="(shop, index) in shops" :key="`shop-${index}`">                        
+                            <img :src="shop.img" />                        
+                        </div> 
+                        <button></button>
+                    </div>                    
+                        <button class="text-center rounded-full bg-lightgreen px-4 py-2">
+                            <span class="font-bold text-base text-center text-white">Все магазины</span>
+                        </button>
                 </div>
                 <div></div>
             </div>
