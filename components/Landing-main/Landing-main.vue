@@ -19,7 +19,7 @@
                 </div>
             </div> 
         </div> 
-        <div class="info-shop">
+        <div class="info-shop pb-32">
             <div class="flex flex-col px-20 pt-12">
                 <div class="flex justify-between gap-10 items-center text-white pb-20">
                     <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
@@ -35,13 +35,15 @@
                         </div> 
                         <button></button>
                     </div>                    
-                        <button class="text-center rounded-full bg-lightgreen px-4 py-2">
-                            <span class="font-bold text-base text-center text-white">Все магазины</span>
-                        </button>
+                    <button class="text-center rounded-full bg-lightgreen px-4 py-2">
+                        <span class="font-bold text-base text-center text-white">Все магазины</span>
+                    </button>
                 </div>
-                <div></div>
             </div>
-        </div>       
+        </div> 
+        <div>
+            
+        </div>  
     </main>
 </template>
 
