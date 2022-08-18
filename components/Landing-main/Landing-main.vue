@@ -41,8 +41,18 @@
                 </div>
             </div>
         </div> 
-        <div>
-            
+        <div class="info-forwarding pb-32">
+            <div class="flex px-20 pt-12">
+                <img v-bind:src="require('@/static/img/info-forwarding-img.png')" />
+                <div class="flex flex-col bg-white px-20 py-12">
+                    <p class="font-extrabold text-7xl tracking-wide">Как работает Mail Forwarding</p>
+                    <div>
+                        <img />
+                        <span></span>
+                    </div>
+                    <button></button>
+                </div>
+            </div>
         </div>  
     </main>
 </template>
@@ -68,6 +78,10 @@ export default {
 
 .info-shop {
     background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
+}
+
+.info-forwarding {
+    background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
 }
 
 </style>
