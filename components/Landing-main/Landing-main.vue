@@ -45,12 +45,14 @@
             <div class="flex px-20 pt-12">
                 <img v-bind:src="require('@/static/img/info-forwarding-img.png')" />
                 <div class="flex flex-col bg-white px-20 py-12">
-                    <p class="font-extrabold text-7xl tracking-wide max-w-xl">Как работает Mail Forwarding</p>
-                    <div>
-                        <img />
-                        <span></span>
+                    <p class="font-extrabold text-7xl tracking-wide max-w-xl mb-11">Как работает Mail Forwarding</p>
+                    <div v-for="(forwarding, index) in forwardings" :key="`forwarding-${index}`" class="flex gap-2 mb-14 pr-28">
+                        <img :src="forwarding.img"/>
+                        <span class="font-normal text-lg leading-7">{{ forwarding.description }}</span>
                     </div>
-                    <button></button>
+                    <button class="text-center border rounded-full border-greenbasic w-60 px-4 py-2">
+                        <span class="font-bold text-base leading-6 text-greenbasic text-center">Получить адрес за рубежом</span>
+                    </button>
                 </div>
             </div>
         </div>  
