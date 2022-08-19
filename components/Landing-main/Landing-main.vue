@@ -59,19 +59,21 @@
         <div class="calculation-price pb-32">
             <div class="flex flex-col text-white px-20 pt-12">
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
-            </div>
-            <div class="grid grid-cols-3">
-                <p>Страна отправления</p>
-                <div>USA</div>
-                <div>0.5</div>
-                <p class="row-span-3">Адрес доставки</p>
-                <div>Russia</div>
-                <div>Mo</div>
-                <div>12</div>
-                <div>45</div>
-                <div>45</div>
-                <p>Примерный объемный вес посылок</p>
-            </div>
+                <div class="grid grid-cols-3 gap-6">
+                    <p class="grid-text">Страна отправления</p>
+                    <div class="grid-text">USA</div>
+                    <div class="grid-text">0.5</div>
+                    <p class="grid-text row-span-3">Адрес доставки</p>
+                    <div class="grid-text">Russia</div>
+                    <div class="grid-text">Mo</div>
+                    <div>12</div>
+                    <div>45</div>
+                    <button class="text-center ounded-full bg-lightgreen w-32 px-4 py-2">
+                        <span class="font-bold text-base leading-6 text-center">Подробнее</span>
+                    </button>
+                    <p class="font-bold text-lg leading-5">Примерный объемный вес посылок</p>
+                </div>
+            </div>            
         </div>
     </main>
 </template>
@@ -118,6 +120,10 @@ export default {
 
 .calculation-price {
     background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
+}
+
+.grid-text {
+    @apply font-bold text-xl leading-7;
 }
 
 </style>
