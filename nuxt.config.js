@@ -19,7 +19,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui',
     { src: '@/plugins/vue-agile', mode: 'client' },
   ],
 

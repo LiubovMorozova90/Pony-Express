@@ -83,7 +83,7 @@
 <script>
 export default {
     data: () => ({
-        return: {
+        
         sliderOptions: {
         autoplay: false,
         centerMode: true,
@@ -99,16 +99,13 @@ export default {
           },
         ],
       },
-    },
+    
         shops: [
             {img: require('~/static/img/slider-shop-amazon.svg')},
             {img: require('~/static/img/slider-shop-ebay.svg')},
             {img: require('~/static/img/slider-shop-levi.svg')},
             {img: require('~/static/img/slider-shop-6pm.svg')},
             {img: require('~/static/img/slider-shop-amazon.svg')},
-            {img: require('~/static/img/slider-shop-ebay.svg')},
-            {img: require('~/static/img/slider-shop-levi.svg')},
-            {img: require('~/static/img/slider-shop-6pm.svg')},
         ],        
         forwardings: [
             {description: 'Цена в России «кусается», а при заказе из другой страны товар не доставляют на Ваш домашний адрес?', 
