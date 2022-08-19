@@ -1,7 +1,7 @@
 <template>
     <main>        
         <div class="info-delivery pb-32">
-            <div class="flex flex-row justife-between px-20 pt-12">
+            <div class="info-delivery-content flex flex-row justife-between px-20 pt-12">
                 <div class="flex flex-col justify-start z-50 pb-20">
                     <p class="font-extrabold text-7xl tracking-wide text-white max-w-lg mb-12">Предоставляем адреса в США, странах Европы и Японии</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Покупайте в онлайн-магазинах США, Европы и Японии и отправляйте на свой адрес в любой город России</p>
@@ -56,6 +56,23 @@
                 </div>
             </div>
         </div>  
+        <div class="calculation-price pb-32">
+            <div class="flex flex-col text-white px-20 pt-12">
+                <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
+            </div>
+            <div class="grid grid-cols-3">
+                <p>Страна отправления</p>
+                <div>USA</div>
+                <div>0.5</div>
+                <p class="row-span-3">Адрес доставки</p>
+                <div>Russia</div>
+                <div>Mo</div>
+                <div>12</div>
+                <div>45</div>
+                <div>45</div>
+                <p>Примерный объемный вес посылок</p>
+            </div>
+        </div>
     </main>
 </template>
 
@@ -86,7 +103,10 @@ export default {
 <style scoped>
 .info-delivery {
     background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.info-delivery-content {}
 
 .info-shop {
     background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
@@ -94,6 +114,10 @@ export default {
 
 .info-forwarding {
     background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
+}
+
+.calculation-price {
+    background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
 }
 
 </style>
