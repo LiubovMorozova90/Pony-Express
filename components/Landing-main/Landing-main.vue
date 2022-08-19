@@ -29,11 +29,11 @@
                     </button>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="max-w-7xl">
+                    <div class="max-w-7xl mb-10">
                         <client-only>
                             <agile ref="carousel" :options="sliderOptions">
                                 <div v-for="(shop, index) in shops" :key="shop.id">                        
-                                    <img :src="shop.img" class="w-80 h-52" />                        
+                                    <img :src="shop.img" class="w-80 h-52" />                      
                                 </div>
                             </agile>
                         </client-only>
@@ -87,7 +87,7 @@ export default {
         sliderOptions: {
         autoplay: false,
         centerMode: true,
-        dots: false,
+        dots: true,
         navButtons: false,
         slidesToShow: 4,
         responsive: [
@@ -145,4 +145,5 @@ export default {
 .grid-text {
     @apply font-bold text-xl leading-7;
 }
+		
 </style>
