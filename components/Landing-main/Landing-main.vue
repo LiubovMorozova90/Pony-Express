@@ -30,10 +30,12 @@
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="flex items-center mb-10">
-                       <div v-for="(shop, index) in shops" :key="`shop-${index}`">                        
-                            <img :src="shop.img" />                        
-                        </div> 
-                        <button></button>
+                        <agile ref="carousel" :options="sliderOptions">
+                            <div v-for="(shop, index) in shops" :key="`shop-${index}`">                        
+                                <img :src="shop.img" />                        
+                            </div> 
+                            <button></button>
+                        </agile>
                     </div>                    
                     <button class="text-center rounded-full bg-lightgreen px-4 py-2">
                         <span class="font-bold text-base text-center text-white">Все магазины</span>
@@ -68,7 +70,7 @@
                     <div class="grid-text">Mo</div>
                     <div>12</div>
                     <div>45</div>
-                    <button class="text-center ounded-full bg-lightgreen w-32 px-4 py-2">
+                    <button class="text-center rounded-full bg-lightgreen w-32 px-4 py-2">
                         <span class="font-bold text-base leading-6 text-center">Подробнее</span>
                     </button>
                     <p class="font-bold text-lg leading-5">Примерный объемный вес посылок</p>
@@ -81,7 +83,28 @@
 <script>
 export default {
     data: () => ({
+        return: {
+        sliderOptions: {
+        autoplay: false,
+        centerMode: true,
+        dots: false,
+        navButtons: false,
+        slidesToShow: 1,
+        responsive: [
+            {
+            breakpoint: 1440,
+            settings: {
+            navButtons: true,
+            },
+          },
+        ],
+      },
+    },
         shops: [
+            {img: require('~/static/img/slider-shop-amazon.svg')},
+            {img: require('~/static/img/slider-shop-ebay.svg')},
+            {img: require('~/static/img/slider-shop-levi.svg')},
+            {img: require('~/static/img/slider-shop-6pm.svg')},
             {img: require('~/static/img/slider-shop-amazon.svg')},
             {img: require('~/static/img/slider-shop-ebay.svg')},
             {img: require('~/static/img/slider-shop-levi.svg')},
