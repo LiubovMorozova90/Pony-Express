@@ -64,7 +64,22 @@
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
-                    <div class="grid-text">USA</div>
+                    <div class="grid-text border-b-2 border-lightgreen">
+                        <div >
+                            <button class="absolute pl-96">
+                                <img v-bind:src="require('@/static/img/chevron-down.svg')" />
+                            </button>
+                        </div>
+                        
+                        <div v-show="!showDeparture">
+                            <p>Китай</p>
+                            <p>Япония</p>
+                            <p>Грузия</p>
+                            <p>Мексика</p>
+                            <p>Индия</p>
+                            <p>США</p>
+                        </div>                        
+                    </div>
                     <div class="grid-text">0.5</div>
                     <p class="grid-text row-span-3">Адрес доставки</p>
                     <div class="grid-text">Russia</div>
@@ -116,7 +131,8 @@ export default {
             img: require('~/static/img/info-forwarding-3.svg')},
             {description: 'Отправим товары к вам домой или в пункт выдачи без переплат по выгодной цене', 
             img: require('~/static/img/info-forwarding-4.svg')},
-        ]
+        ],
+        showDeparture: true,
     })
 }
 </script>
