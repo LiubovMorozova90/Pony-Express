@@ -29,13 +29,14 @@
                     </button>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="flex items-center mb-10">
-                        <agile ref="carousel" :options="sliderOptions">
-                            <div v-for="(shop) in shops" :key="shop.id">                        
-                                <img :src="shop.img" />                        
-                            </div> 
-                            <button></button>
-                        </agile>
+                    <div class="max-w-7xl">
+                        <client-only>
+                            <agile>
+                                <div v-for="(shop, index) in shops" :key="shop.id" class="">                        
+                                    <img :src="shop.img" class="w-80 h-52" />                        
+                                </div>
+                            </agile>
+                        </client-only>
                     </div>                    
                     <button class="text-center rounded-full bg-lightgreen px-4 py-2">
                         <span class="font-bold text-base text-center text-white">Все магазины</span>
@@ -82,14 +83,14 @@
 
 <script>
 export default {
-    data: () => ({
-        
+    data: () => ({        
         sliderOptions: {
         autoplay: false,
         centerMode: true,
         dots: false,
-        navButtons: false,
-        slidesToShow: 1,
+        infinity: true,
+        navButtons: true,
+        slidesToShow: 4,
         responsive: [
             {
             breakpoint: 1440,
@@ -144,5 +145,4 @@ export default {
 .grid-text {
     @apply font-bold text-xl leading-7;
 }
-
 </style>
