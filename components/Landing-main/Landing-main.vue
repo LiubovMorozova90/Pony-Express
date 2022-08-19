@@ -31,7 +31,7 @@
                 <div class="flex flex-col items-center">
                     <div class="flex items-center mb-10">
                         <agile ref="carousel" :options="sliderOptions">
-                            <div v-for="(shop, index) in shops" :key="`shop-${index}`">                        
+                            <div v-for="(shop) in shops" :key="shop.id">                        
                                 <img :src="shop.img" />                        
                             </div> 
                             <button></button>
@@ -98,8 +98,7 @@ export default {
             },
           },
         ],
-      },
-    
+      },    
         shops: [
             {img: require('~/static/img/slider-shop-amazon.svg')},
             {img: require('~/static/img/slider-shop-ebay.svg')},
