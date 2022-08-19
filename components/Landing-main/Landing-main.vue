@@ -64,32 +64,34 @@
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
-                    <div class="grid-text border-b-2 border-lightgreen">
-                        <button class="absolute pl-96">
+                    <div class="grid-text border-b-2 border-lightgreen relative">
+                        <button v-on:click="showDeparture = !showDeparture" class="pl-96">
+                            <span class="font-extralight">{{ cat }}</span>
                             <img v-bind:src="require('@/static/img/chevron-down.svg')" />
+                            
                         </button>
-                        <div v-show="!showDeparture">
-                            <p>Китай</p>
-                            <p>Япония</p>
-                            <p>Грузия</p>
-                            <p>Мексика</p>
-                            <p>Индия</p>
-                            <p>США</p>
+                        <div v-show="showDeparture" class="border bg-lightgreen absolute w-full top-full px-2 py-2">
+                           
+                            <p v-on:click="cat = value.title" v-for="(value, index) in Departure" :key="`value-${index}`"> {{ value.title }}</p>
                         </div>                        
                     </div>
-                    <div class="grid-text border-b-2 border-lightgreen">0.5</div>
+                    <div class="flex justify-between grid-text border-b-2 border-lightgreen pb-2">
+                        <button>
+                            <img v-bind:src="require('@/static/img/subtraction.svg')" />
+                        </button>
+                        <p> {{ }}</p>
+                        <button>
+                            <img v-bind:src="require('@/static/img/sum.svg')" />
+                        </button>
+                    </div>
                     <p class="grid-text row-span-3">Адрес доставки</p>
-                    <div class="grid-text border-b-2 border-lightgreen">
-                        <button class="absolute pl-96">
+                    <div class="grid-text border-b-2 border-lightgreen relative">
+                        <button v-on:click="showDelivery = !showDelivery" class="absolute pl-96">
                             <img v-bind:src="require('@/static/img/chevron-down.svg')" />
                         </button>
-                        <div v-show="!showDelivery">
-                            <p>Китай</p>
-                            <p>Япония</p>
-                            <p>Грузия</p>
-                            <p>Мексика</p>
-                            <p>Индия</p>
-                            <p>США</p>
+                        <div v-show="showDelivery" class="border bg-lightgreen absolute w-full top-full px-2 py-2">
+                            
+                            <p v-for="(item, index) in Delivery" :key="`item-${index}`"> {{ item.title }}</p>
                         </div>
                     </div>
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen">
@@ -112,6 +114,11 @@
                     <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
                 </div>
             </div>            
+        </div>
+        <div class="package">
+            <div class="items-center px-20 pt-12">
+                <img v-bind:src="require('@/static/img/package-mass.svg')" />
+            </div>
         </div>
     </main>
 </template>
@@ -152,10 +159,23 @@ export default {
             {description: 'Отправим товары к вам домой или в пункт выдачи без переплат по выгодной цене', 
             img: require('~/static/img/info-forwarding-4.svg')},
         ],
-        showDeparture: true,
-        Departure: [],
-        showDelivery: true,
-        Delivery: [],
+        showDeparture: false,
+        Departure: [
+            {id: 1, title: 'Китай'},
+            {id: 2, title: 'Япония'},
+            {id: 3, title: 'Грузия'},
+            {id: 4, title: 'Мексика'},
+            {id: 5, title: 'США'},
+        ],
+        showDelivery: false,
+        Delivery: [
+            {id: 101, title: 'Китай'},
+            {id: 102, title: 'Япония'},
+            {id: 103, title: 'Грузия'},
+            {id: 104, title: 'Мексика'},
+            {id: 105, title: 'США'},
+        ],
+        cat: 'May'
     })
 }
 </script>
@@ -187,6 +207,10 @@ export default {
 
 .text-mass {
     text-align: end;
+}
+
+.package {
+    background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
 }
 		
 </style>
