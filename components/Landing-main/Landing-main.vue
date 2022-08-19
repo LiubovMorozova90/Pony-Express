@@ -65,12 +65,9 @@
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
                     <div class="grid-text border-b-2 border-lightgreen">
-                        <div >
-                            <button class="absolute pl-96">
-                                <img v-bind:src="require('@/static/img/chevron-down.svg')" />
-                            </button>
-                        </div>
-                        
+                        <button class="absolute pl-96">
+                            <img v-bind:src="require('@/static/img/chevron-down.svg')" />
+                        </button>
                         <div v-show="!showDeparture">
                             <p>Китай</p>
                             <p>Япония</p>
@@ -80,10 +77,22 @@
                             <p>США</p>
                         </div>                        
                     </div>
-                    <div class="grid-text">0.5</div>
+                    <div class="grid-text border-b-2 border-lightgreen">0.5</div>
                     <p class="grid-text row-span-3">Адрес доставки</p>
-                    <div class="grid-text">Russia</div>
-                    <div class="grid-text">Mo</div>
+                    <div class="grid-text border-b-2 border-lightgreen">
+                        <button class="absolute pl-96">
+                            <img v-bind:src="require('@/static/img/chevron-down.svg')" />
+                        </button>
+                        <div v-show="!showDelivery">
+                            <p>Китай</p>
+                            <p>Япония</p>
+                            <p>Грузия</p>
+                            <p>Мексика</p>
+                            <p>Индия</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                    <div class="grid-text border-b-2 border-lightgreen"><input class="bg-transparent" /></div>
                     <div>12</div>
                     <div>45</div>
                     <button class="text-center rounded-full bg-lightgreen w-32 px-4 py-2">
@@ -133,6 +142,9 @@ export default {
             img: require('~/static/img/info-forwarding-4.svg')},
         ],
         showDeparture: true,
+        Departure: [],
+        showDelivery: true,
+        Delivery: [],
     })
 }
 </script>
