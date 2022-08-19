@@ -31,8 +31,8 @@
                 <div class="flex flex-col items-center">
                     <div class="max-w-7xl">
                         <client-only>
-                            <agile>
-                                <div v-for="(shop, index) in shops" :key="shop.id" class="">                        
+                            <agile ref="carousel" :options="sliderOptions">
+                                <div v-for="(shop, index) in shops" :key="shop.id">                        
                                     <img :src="shop.img" class="w-80 h-52" />                        
                                 </div>
                             </agile>
@@ -88,11 +88,10 @@ export default {
         autoplay: false,
         centerMode: true,
         dots: false,
-        infinity: true,
-        navButtons: true,
+        navButtons: false,
         slidesToShow: 4,
         responsive: [
-            {
+          {
             breakpoint: 1440,
             settings: {
             navButtons: true,
@@ -105,6 +104,7 @@ export default {
             {img: require('~/static/img/slider-shop-ebay.svg')},
             {img: require('~/static/img/slider-shop-levi.svg')},
             {img: require('~/static/img/slider-shop-6pm.svg')},
+            {img: require('~/static/img/slider-shop-amazon.svg')},
             {img: require('~/static/img/slider-shop-amazon.svg')},
         ],        
         forwardings: [
