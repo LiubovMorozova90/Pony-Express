@@ -92,13 +92,24 @@
                             <p>США</p>
                         </div>
                     </div>
-                    <div class="grid-text border-b-2 border-lightgreen"><input class="bg-transparent" /></div>
-                    <div>12</div>
-                    <div>45</div>
+                    <div class="flex justify-between grid-text border-b-2 border-lightgreen">
+                        <input class="bg-transparent w-80" />
+                        <img v-bind:src="require('@/static/img/akar-icons_pencil.svg')" />
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-lg leading-5">Пункт выдачи</p>
+                        <p class="font-bold text-lg leading-5"> {{ }} дней</p>
+                        <p class="font-bold text-3xl leading-10"> {{ }} $</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-lg leading-5">До двери</p>
+                        <p class="font-bold text-lg leading-5"> {{ }} дней</p>
+                        <p class="font-bold text-3xl leading-10"> {{ }} $</p>
+                    </div>
                     <button class="text-center rounded-full bg-lightgreen w-32 px-4 py-2">
                         <span class="font-bold text-base leading-6 text-center">Подробнее</span>
                     </button>
-                    <p class="font-bold text-lg leading-5">Примерный объемный вес посылок</p>
+                    <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
                 </div>
             </div>            
         </div>
@@ -172,6 +183,10 @@ export default {
 
 .grid-text {
     @apply font-bold text-xl leading-7;
+}
+
+.text-mass {
+    text-align: end;
 }
 		
 </style>
