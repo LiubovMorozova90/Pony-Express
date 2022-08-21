@@ -64,36 +64,18 @@
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
-                    <div class="grid-text border-b-2 border-lightgreen relative">
-                        <button v-on:click="showDeparture = !showDeparture" class="pl-96">
-                            <span class="font-extralight">{{ cat }}</span>
-                            <img v-bind:src="require('@/static/img/chevron-down.svg')" />
-                            
-                        </button>
-                        <div v-show="showDeparture" class="border bg-lightgreen absolute w-full top-full px-2 py-2">
-                           
-                            <p v-on:click="cat = value.title" v-for="(value, index) in Departure" :key="`value-${index}`"> {{ value.title }}</p>
-                        </div>                        
-                    </div>
+                    <LandingMainDropdown :options-list="Departure" v-model="choiceDeparture" />
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen pb-2">
-                        <button>
+                        <button v-on:click="counter -= 0.5">
                             <img v-bind:src="require('@/static/img/subtraction.svg')" />
                         </button>
-                        <p> {{ }}</p>
-                        <button>
+                        <p> {{ counter }} кг</p>
+                        <button v-on:click="counter += 0.5">
                             <img v-bind:src="require('@/static/img/sum.svg')" />
                         </button>
                     </div>
                     <p class="grid-text row-span-3">Адрес доставки</p>
-                    <div class="grid-text border-b-2 border-lightgreen relative">
-                        <button v-on:click="showDelivery = !showDelivery" class="absolute pl-96">
-                            <img v-bind:src="require('@/static/img/chevron-down.svg')" />
-                        </button>
-                        <div v-show="showDelivery" class="border bg-lightgreen absolute w-full top-full px-2 py-2">
-                            
-                            <p v-for="(item, index) in Delivery" :key="`item-${index}`"> {{ item.title }}</p>
-                        </div>
-                    </div>
+                    <LandingMainDropdown :options-list="Delivery" v-model="choiceDelivery" />
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen">
                         <input class="bg-transparent w-80" />
                         <img v-bind:src="require('@/static/img/akar-icons_pencil.svg')" />
@@ -116,7 +98,7 @@
             </div>            
         </div>
         <div class="package">
-            <div class="items-center px-20 pt-12">
+            <div class="px-20 pt-12">
                 <img v-bind:src="require('@/static/img/package-mass.svg')" />
             </div>
         </div>
@@ -124,7 +106,13 @@
 </template>
 
 <script>
+
+import LandingMainDropDown from '~/components/Landing-main/LandingMainDropdown.vue';
+
 export default {
+    components: {
+    LandingMainDropDown,
+},
     data: () => ({        
         sliderOptions: {
         autoplay: false,
@@ -159,7 +147,6 @@ export default {
             {description: 'Отправим товары к вам домой или в пункт выдачи без переплат по выгодной цене', 
             img: require('~/static/img/info-forwarding-4.svg')},
         ],
-        showDeparture: false,
         Departure: [
             {id: 1, title: 'Китай'},
             {id: 2, title: 'Япония'},
@@ -167,7 +154,6 @@ export default {
             {id: 4, title: 'Мексика'},
             {id: 5, title: 'США'},
         ],
-        showDelivery: false,
         Delivery: [
             {id: 101, title: 'Китай'},
             {id: 102, title: 'Япония'},
@@ -175,7 +161,9 @@ export default {
             {id: 104, title: 'Мексика'},
             {id: 105, title: 'США'},
         ],
-        cat: 'May'
+        choiceDeparture: '',
+        choiceDelivery: '',
+        counter: 0,
     })
 }
 </script>

@@ -7,7 +7,7 @@
 
 <script>
 import Header from '~/components/Landing-header/Header.vue';
-import LandingMain from '~/components/Landing-main/Landing-main.vue';
+import LandingMain from '~/components/Landing-main/LandingMain.vue';
 
 export default {
   components: {
