@@ -131,10 +131,13 @@
 <script>
 
 import LandingMainDropDown from '~/components/Landing-main/LandingMainDropdown.vue';
+import VolumeWeights from '~/components/Landing-main/VolumeWeights.vue'
 
 export default {
     components: {
     LandingMainDropDown,
+    VolumeWeights
+
 },
     data: () => ({        
         sliderOptions: {
