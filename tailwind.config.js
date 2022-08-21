@@ -9,6 +9,7 @@ module.exports = {
         white: '#FFFFFF',
         black: '#000000',
         lightgrey: 'd0d0d0',
+        grey: '#B1B1B1'
       },
       fontFamily:  {
         circe: 'Circe',

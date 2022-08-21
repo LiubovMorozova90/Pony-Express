@@ -98,8 +98,31 @@
             </div>            
         </div>
         <div class="package">
-            <div class="px-20 pt-12">
+            <div class="px-20 pt-12 ml-28">
                 <img v-bind:src="require('@/static/img/package-mass.svg')" />
+            </div>
+        </div>
+        <div class="mail-forwarding">
+            <div class="flex px-20 pt-12">
+                <div class="bg-white py-12 px-20">
+                    <p class="font-extrabold text-7xl tracking-wide mb-11">Услуги Mail Forwarding</p>
+                    <p class="font-bold text-2xl leading-7 mb-5">Основные услуги</p>
+                    <div v-for="(service, index) in services" :key="`service-${index}`" >
+                        <div class="flex justify-between border-t-2">
+                            <div class="flex flex-col gap-2">
+                                <span class="font-normal text-lg leading-7">{{ service.title }}</span>
+                                <span class="font-normal text-xs leading-3 text-grey">{{ service.remark }}</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-lg leading-7">{{ service.price }}</span>
+                            </div>
+                        </div>                                        
+                    </div>
+                    <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2">
+                        <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
+                    </button>
+                </div>
+                <img v-bind:src="require('@/static/img/mail-forwarding.png')" />
             </div>
         </div>
     </main>
@@ -164,6 +187,22 @@ export default {
         choiceDeparture: '',
         choiceDelivery: '',
         counter: 0,
+        services: [
+            {title: 'Инспекция посылки + 5 фото', price: '5$', remark: ''},
+            {title: 'Предоставление адреса доставки за рубежом', price: 'Бесплатно', remark: ''},
+            {title: 'Приём и хранение товаров на складе до 30 дней', price: 'Бесплатно', remark: ''},
+            {title: 'Хранение свыше 30 дней', price: '1$/день', remark: ''},
+            {title: 'Удаление лишней упаковки с товара', price: 'Бесплатно', remark: 'Услуга предоставляется бесплатно, только при заказе услуги "Инспекция посылки + 5 фото" =5$'},
+            {title: 'Разделение покупки на товары (до 10 шт.)', price: 'Бесплатно', remark: 'Услуга предоставляется бесплатно, только при заказе услуги "Инспекция посылки + 5 фото" =5$'},
+            {title: 'Сравнить товар и инвойс (инспекция, до 5 фото)', price: '5$', remark: ''},
+            {title: 'Дополнительные 10 фото товаров', price: '2$', remark: ''},
+            {title: 'Упаковка посылки для отправки в Россию', price: 'Бесплатно', remark: ''},
+            {title: 'Нестандартная упаковка', price: 'Индивидуально', remark: ''},
+            {title: 'Добавление товара в исходящую посылку', price: 'Бесплатно', remark: ''},
+            {title: 'Сканирование документов (до 10 страниц)', price: 'Бесплатно', remark: ''},
+            {title: 'Индивидуальная упаковка', price: '10$', remark: ''},
+            {title: 'Розыск MF-заказа', price: '10$', remark: ''},
+        ]
     })
 }
 </script>
@@ -199,6 +238,10 @@ export default {
 
 .package {
     background: linear-gradient(270.19deg, #45A145 -0.01%, #71BC46 98.04%);
+}
+
+.mail-forwarding {
+    background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
 }
 		
 </style>
