@@ -1,5 +1,8 @@
 <template>
-    <main class="relative">        
+    <main class="relative">  
+        <div v-for="item in 6" :key="`bg-rectangle-${item}`" class="absolute w-2000 h-800 bg-greenbasic" :class="[
+            `top-${item * 2}/12`
+        ]"></div>      
         <div class="info-delivery pb-32">
             <div class="info-delivery-content flex flex-row justife-between px-20 pt-12">
                 <div class="flex flex-col justify-start z-50 pb-20">

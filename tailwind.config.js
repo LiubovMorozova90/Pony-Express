@@ -14,6 +14,12 @@ module.exports = {
       },
       fontFamily:  {
         circe: 'Circe',
+      },
+      width: {
+        '2000': '2000px',
+      },
+      height: {
+        '800': '800px'
       }
     }
   }
