@@ -32,7 +32,7 @@
                     <div class="max-w-7xl mb-10">
                         <client-only>
                             <agile ref="carousel" :options="sliderOptions">
-                                <div v-for="(shop, index) in shops" :key="shop.id">                        
+                                <div v-for="shop in shops" :key="shop.id">                        
                                     <img :src="shop.img" class="w-80 h-52" />                      
                                 </div>
                             </agile>
@@ -99,7 +99,7 @@
         </div>
         <div class="package">
             <div class="px-20 py-12 ml-28 relative">
-                <VolumeWeights />
+                <VolumeWeights v-on:changeWeight="currentWeight = $event" />
             </div>
         </div>
         <div class="mail-forwarding">
@@ -205,9 +205,7 @@ export default {
             {title: 'Индивидуальная упаковка', price: '10$', remark: ''},
             {title: 'Розыск MF-заказа', price: '10$', remark: ''},
         ],
-        volumeWeights: [
-            {title: 'Куртка', value: 1.5, mass: '1.5 кг', img: require('~/static/img/jacket.svg'), position: 'top-0 left-0', size: '232px'}
-        ]
+        currentWeight: 1
     })
 }
 </script>
