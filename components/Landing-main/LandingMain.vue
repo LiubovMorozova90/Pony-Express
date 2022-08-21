@@ -98,31 +98,31 @@
             </div>            
         </div>
         <div class="package">
-            <div class="px-20 pt-12 ml-28">
-                <img v-bind:src="require('@/static/img/package-mass.svg')" />
+            <div class="px-20 pt-12 ml-28 relative">
+                <div v-for="(item, index) in volumeWeights" :key="`value-height-item-${index}`"></div>
             </div>
         </div>
         <div class="mail-forwarding">
             <div class="flex px-20 pt-12">
-                <div class="bg-white py-12 px-20">
+                <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
                     <p class="font-extrabold text-7xl tracking-wide mb-11">Услуги Mail Forwarding</p>
                     <p class="font-bold text-2xl leading-7 mb-5">Основные услуги</p>
-                    <div v-for="(service, index) in services" :key="`service-${index}`" >
-                        <div class="flex justify-between border-t-2">
-                            <div class="flex flex-col gap-2">
-                                <span class="font-normal text-lg leading-7">{{ service.title }}</span>
-                                <span class="font-normal text-xs leading-3 text-grey">{{ service.remark }}</span>
+                    <div v-for="(service, index) in services" :key="`service-${index}`">
+                        <div class="flex justify-between gap-4 border-t-2 py-5">
+                            <div class="flex flex-col gap-2 font-normal">
+                                <span class="text-lg leading-7">{{ service.title }}</span>
+                                <span v-if="service.remark" class="text-xs leading-3 text-aluminum max-w-xs">{{ service.remark }}</span>
                             </div>
                             <div>
                                 <span class="font-bold text-lg leading-7">{{ service.price }}</span>
                             </div>
                         </div>                                        
                     </div>
-                    <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2">
+                    <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2 mt-5">
                         <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
                     </button>
                 </div>
-                <img v-bind:src="require('@/static/img/mail-forwarding.png')" />
+                <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-7" />
             </div>
         </div>
     </main>
@@ -202,6 +202,9 @@ export default {
             {title: 'Сканирование документов (до 10 страниц)', price: 'Бесплатно', remark: ''},
             {title: 'Индивидуальная упаковка', price: '10$', remark: ''},
             {title: 'Розыск MF-заказа', price: '10$', remark: ''},
+        ],
+        volumeWeights: [
+            {title: 'Куртка', value: 1.5, mass: '1.5 кг', img: require('~/static/img/jacket.svg'), position: 'top-0 left-0', size: '232px'}
         ]
     })
 }
