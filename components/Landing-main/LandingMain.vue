@@ -98,8 +98,8 @@
             </div>            
         </div>
         <div class="package">
-            <div class="px-20 pt-12 ml-28 relative">
-                <div v-for="(item, index) in volumeWeights" :key="`value-height-item-${index}`"></div>
+            <div class="px-20 py-12 ml-28 relative">
+                <VolumeWeights />
             </div>
         </div>
         <div class="mail-forwarding">
@@ -136,8 +136,7 @@ import VolumeWeights from '~/components/Landing-main/VolumeWeights.vue'
 export default {
     components: {
     LandingMainDropDown,
-    VolumeWeights
-
+    VolumeWeights,
 },
     data: () => ({        
         sliderOptions: {
