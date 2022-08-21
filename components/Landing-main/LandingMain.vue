@@ -1,5 +1,5 @@
 <template>
-    <main>        
+    <main class="relative">        
         <div class="info-delivery pb-32">
             <div class="info-delivery-content flex flex-row justife-between px-20 pt-12">
                 <div class="flex flex-col justify-start z-50 pb-20">
@@ -125,17 +125,19 @@
                 <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-7" />
             </div>
         </div>
-        <div class="delivery-main">
-            <div class="delivery-main-text flex px-20">
+        <div class="forwarding-main">
+            <div class="forwarding-main-text flex gap-56 px-20">
                 <div>
                     <img :src="require('@/static/img/main-forwarding-1.png')" class="relative z-20" />
                     <img :src="require('@/static/img/main-forwarding-2.png')" class="absolute z-30 -mt-52 ml-32" />
                 </div>
-                <div class="flex flex-col">
-                    <p class="">Доставка из США, Европы и Японии с PONY EXPRESS</p>
-                    <div></div>
-                    <button>
-                        <span></span>
+                <div class="flex flex-col w-1/2">
+                    <p class="font-extrabold text-7xl tracking-wide mb-11">Доставка из США, Европы и Японии с PONY EXPRESS</p>
+                    <div v-for="item in mainForwarding" :key="item.id">
+                        <p v-html="item.title" class="forwarding-main-info"></p>
+                    </div>
+                    <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2 mt-5">
+                        <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
                     </button>
                 </div>
             </div>
@@ -219,7 +221,17 @@ export default {
             {title: 'Индивидуальная упаковка', price: '10$', remark: ''},
             {title: 'Розыск MF-заказа', price: '10$', remark: ''},
         ],
-        currentWeight: 1
+        currentWeight: 1,
+        mainForwarding: [
+            {title: 'Доставка осуществляется компанией PONY EXPRESS'},
+            {title: 'Посылки летят из США, Европы и Японии, проходят таможенное оформление и доставляются по всей России до пунктов выдачи или до двери курьером по Вашему желанию.'},
+            {title: 'Сроки доставки от 5 дней. Отличные тарифы на экспресс-доставку'},
+            {title: 'Отследить посылку после отправки по номеру заказа можно на сайте <a href="#" style="color: #00833E; text-decoration-line: underline;">PONY EXPRESS</a>'},
+            {title: '<a href="#" style="color: #00833E; text-decoration-line: underline;">Условия доставки</a>'},
+            {title: '<a href="#" style="color: #00833E; text-decoration-line: underline;">Ограничения по услуге</a>'},
+            {title: '<a href="#" style="color: #00833E; text-decoration-line: underline;">Информация по лимитам беспошлинного ввоза</a>'},
+            {title: '<a href="#" style="color: #00833E; text-decoration-line: underline;">Где находятся пункты выдачи</a>'},
+        ]
     })
 }
 </script>
@@ -261,12 +273,16 @@ export default {
     background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
 }
 
-.delivery-main {
+.forwarding-main {
     background-color: #F5F5F5;
 }
 
-.delivery-main-text {
+.forwarding-main-text {
     padding-top: 650px;
+}
+
+.forwarding-main-info:before {
+    content: url('static/img/forwarding-text.svg');;
 }
 		
 </style>
