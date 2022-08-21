@@ -5,7 +5,7 @@
             <img v-bind:src="require('@/static/img/chevron-down.svg')" class="absolute ml-96 z-40" />
         </button>
         <div v-show="isShown" class="border bg-lightgreen absolute w-full top-full px-2 py-2">                            
-            <p v-on:click="emit('update:value', item.title)" v-for="(item, index) in optionsList" :key="`item-${index}`" class="choice-country relative z-50"> {{ item.title }}</p>
+            <p v-on:click="updateValue(item.title)" v-for="(item, index) in optionsList" :key="`item-${index}`" class="choice-country relative z-50"> {{ item.title }}</p>
         </div>
     </div>
 </template>
@@ -25,7 +25,13 @@ export default {
     },
     data: () => ({
         isShown: false
-    })
+    }),
+    methods: {
+        updateValue(value) {
+            this.isShown = false
+            this.$emit('input', value)
+        }
+    }
 }
 </script>
 

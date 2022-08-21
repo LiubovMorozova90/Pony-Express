@@ -64,7 +64,7 @@
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
-                    <LandingMainDropdown :options-list="Departure" v-model="choiceDeparture" />
+                    <LandingMainDropdown :options-list="Departure" v-model:value="choiceDeparture" class="z-50" />
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen pb-2">
                         <button v-on:click="counter -= 0.5">
                             <img v-bind:src="require('@/static/img/subtraction.svg')" />
