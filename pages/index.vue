@@ -1,5 +1,5 @@
 <template>
-  <div class="font-circe">
+  <div class="font-circe bg-main">
     <Header></Header>
     <LandingMain></LandingMain>
   </div>  

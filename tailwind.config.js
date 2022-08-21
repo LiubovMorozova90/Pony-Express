@@ -8,8 +8,9 @@ module.exports = {
         lightgreen: '#6CBE37',
         white: '#FFFFFF',
         black: '#000000',
-        lightgrey: 'd0d0d0',
-        aluminum: '#B1B1B1'
+        lightgrey: '#d0d0d0',
+        aluminum: '#B1B1B1',
+        main: '#F5F5F5'
       },
       fontFamily:  {
         circe: 'Circe',
