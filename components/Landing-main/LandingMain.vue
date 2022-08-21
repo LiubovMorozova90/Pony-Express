@@ -66,11 +66,11 @@
                     <p class="grid-text">Страна отправления</p>
                     <LandingMainDropdown :options-list="Departure" v-model:value="choiceDeparture" class="z-50" />
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen pb-2">
-                        <button v-on:click="counter -= 0.5">
+                        <button v-on:click="currentWeight -= 0.5">
                             <img v-bind:src="require('@/static/img/subtraction.svg')" />
                         </button>
-                        <p> {{ counter }} кг</p>
-                        <button v-on:click="counter += 0.5">
+                        <p> {{ currentWeight }} кг</p>
+                        <button v-on:click="currentWeight += 0.5">
                             <img v-bind:src="require('@/static/img/sum.svg')" />
                         </button>
                     </div>
@@ -123,6 +123,21 @@
                     </button>
                 </div>
                 <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-7" />
+            </div>
+        </div>
+        <div class="delivery-main">
+            <div class="delivery-main-text flex px-20">
+                <div>
+                    <img :src="require('@/static/img/main-forwarding-1.png')" class="relative z-20" />
+                    <img :src="require('@/static/img/main-forwarding-2.png')" class="absolute z-30 -mt-52 ml-32" />
+                </div>
+                <div class="flex flex-col">
+                    <p class="">Доставка из США, Европы и Японии с PONY EXPRESS</p>
+                    <div></div>
+                    <button>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -188,7 +203,6 @@ export default {
         ],
         choiceDeparture: '',
         choiceDelivery: '',
-        counter: 0,
         services: [
             {title: 'Инспекция посылки + 5 фото', price: '5$', remark: ''},
             {title: 'Предоставление адреса доставки за рубежом', price: 'Бесплатно', remark: ''},
@@ -245,6 +259,14 @@ export default {
 
 .mail-forwarding {
     background: linear-gradient(270.19deg, #1A771A -0.01%, #56A329 98.04%);
+}
+
+.delivery-main {
+    background-color: #F5F5F5;
+}
+
+.delivery-main-text {
+    padding-top: 650px;
 }
 		
 </style>
