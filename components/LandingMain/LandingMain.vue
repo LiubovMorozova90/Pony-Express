@@ -111,7 +111,7 @@
                     <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
                 </button>
             </div>
-            <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-7" />
+            <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-8" />
         </div>
         <div class="forwarding-main-text flex gap-56 px-20 mb-40">
             <div>
