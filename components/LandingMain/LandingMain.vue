@@ -77,17 +77,7 @@
             <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
                 <p class="title-text mb-11">Услуги Mail Forwarding</p>
                 <p class="font-bold text-2xl leading-7 mb-5">Основные услуги</p>
-                <div v-for="(service, index) in services" :key="`service-${index}`">
-                    <div class="flex justify-between gap-4 border-t-2 py-5">
-                        <div class="flex flex-col gap-2 font-normal">
-                            <span class="text-lg leading-7">{{ service.title }}</span>
-                            <span v-if="service.remark" class="text-xs leading-3 text-aluminum max-w-xs">{{ service.remark }}</span>
-                        </div>
-                        <div>
-                            <span class="font-bold text-lg leading-7">{{ service.price }}</span>
-                        </div>
-                    </div>                                        
-                </div>
+                <LandingMainServices />
                 <button class="btn border text-greenbasic border-greenbasic mt-5">Получить адрес за рубежом</button>
             </div>
             <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-8" />
@@ -115,7 +105,8 @@
 import LandingMainDropDown from '~/components/LandingMain/LandingMainDropdown.vue';
 import VolumeWeights from '~/components/LandingMain/VolumeWeights.vue';
 import LandingMainSlide from './LandingMainSlider.vue';
-import LandingMainMailForwarding from './LandingMainMailForwarding.vue'
+import LandingMainMailForwarding from './LandingMainMailForwarding.vue';
+import LandingMainServices from './LandingMainServices.vue'
 
 export default {
     components: {
@@ -123,18 +114,9 @@ export default {
     VolumeWeights,
     LandingMainSlide,
     LandingMainMailForwarding,
+    LandingMainServices
 },
-    data: () => ({         
-        forwardings: [
-            {description: 'Цена в России «кусается», а при заказе из другой страны товар не доставляют на Ваш домашний адрес?', 
-            img: require('~/static/img/info-forwarding-1.svg')},
-            {description: 'Предоставим бесплатно почтовый адрес за рубежом, на который онлайн-магазин сможет отправить Ваш товар', 
-            img: require('~/static/img/info-forwarding-2.svg')},
-            {description: 'Проверим и упакуем все ваши заказы, приходящие на этот адрес, в одну посылку.', 
-            img: require('~/static/img/info-forwarding-3.svg')},
-            {description: 'Отправим товары к вам домой или в пункт выдачи без переплат по выгодной цене', 
-            img: require('~/static/img/info-forwarding-4.svg')},
-        ],
+    data: () => ({ 
         Departure: [
             {id: 1, title: 'Китай'},
             {id: 2, title: 'Япония'},
@@ -151,22 +133,6 @@ export default {
         ],
         choiceDeparture: '',
         choiceDelivery: '',
-        services: [
-            {title: 'Инспекция посылки + 5 фото', price: '5$', remark: ''},
-            {title: 'Предоставление адреса доставки за рубежом', price: 'Бесплатно', remark: ''},
-            {title: 'Приём и хранение товаров на складе до 30 дней', price: 'Бесплатно', remark: ''},
-            {title: 'Хранение свыше 30 дней', price: '1$/день', remark: ''},
-            {title: 'Удаление лишней упаковки с товара', price: 'Бесплатно', remark: 'Услуга предоставляется бесплатно, только при заказе услуги "Инспекция посылки + 5 фото" =5$'},
-            {title: 'Разделение покупки на товары (до 10 шт.)', price: 'Бесплатно', remark: 'Услуга предоставляется бесплатно, только при заказе услуги "Инспекция посылки + 5 фото" =5$'},
-            {title: 'Сравнить товар и инвойс (инспекция, до 5 фото)', price: '5$', remark: ''},
-            {title: 'Дополнительные 10 фото товаров', price: '2$', remark: ''},
-            {title: 'Упаковка посылки для отправки в Россию', price: 'Бесплатно', remark: ''},
-            {title: 'Нестандартная упаковка', price: 'Индивидуально', remark: ''},
-            {title: 'Добавление товара в исходящую посылку', price: 'Бесплатно', remark: ''},
-            {title: 'Сканирование документов (до 10 страниц)', price: 'Бесплатно', remark: ''},
-            {title: 'Индивидуальная упаковка', price: '10$', remark: ''},
-            {title: 'Розыск MF-заказа', price: '10$', remark: ''},
-        ],
         currentWeight: 1,
         mainForwarding: [
             {title: 'Доставка осуществляется компанией PONY EXPRESS'},
