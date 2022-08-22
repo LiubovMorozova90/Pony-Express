@@ -9,7 +9,7 @@
                     <img v-bind:src="require('@/static/img/info-delivery-1.png')" class="relative z-20"/>
                     <img v-bind:src="require('@/static/img/info-delivery-2.png')" class="absolute -mt-16 -ml-9 z-30" />
                 </div>
-                <div class="flex flex-row pt-64">
+                <div class="flex flex-row pt-64 z-50">
                     <img v-bind:src="require('@/static/img/info-country.svg')" />
                     <div class="-mt-20 -ml-36">
                         <p class="font-extrabold text-4xl leading-10 tracking-wide text-white absolute pt-16 pl-7 z-50">США</p>
@@ -18,14 +18,14 @@
                 </div>
             </div>
             <div class="flex flex-col px-20 pt-12 pb-32">
-                <div class="flex justify-between gap-10 items-center text-white pb-20">
+                <div class="flex justify-between gap-10 items-center text-white pb-20 z-50">
                     <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
                     <button class="text-center border rounded-full w-60 px-4 py-2 mt-28">
                         <span class="font-bold text-base text-center">Получить адрес за рубежом</span>
                     </button>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center z-50">
                     <div class="max-w-7xl mb-10">
                         <client-only>
                             <agile ref="carousel" :options="sliderOptions">
@@ -41,8 +41,8 @@
                 </div>
             </div>
             <div class="flex px-20 pt-12 pb-32">
-                <img v-bind:src="require('@/static/img/info-forwarding-img.png')" />
-                <div class="flex flex-col bg-white px-20 py-12">
+                <img v-bind:src="require('@/static/img/info-forwarding-img.png')" class="z-50" />
+                <div class="flex flex-col bg-white px-20 py-12 z-50">
                     <p class="font-extrabold text-7xl tracking-wide max-w-xl mb-11">Как работает Mail Forwarding</p>
                     <div v-for="(forwarding, index) in forwardings" :key="`forwarding-${index}`" class="flex gap-2 mb-14 pr-28">
                         <img :src="forwarding.img"/>
@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="flex flex-col text-white px-20 pt-12 pb-32">
-                <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
-                <div class="grid grid-cols-3 gap-6">
+                <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9 z-50">Рассчитайте стоимость доставки</p>
+                <div class="grid grid-cols-3 gap-6 z-50">
                     <p class="grid-text">Страна отправления</p>
                     <LandingMainDropdown :options-list="Departure" v-model:value="choiceDeparture" class="z-50" />
                     <div class="flex justify-between grid-text border-b-2 border-lightgreen pb-2">
@@ -89,8 +89,8 @@
                     <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
                 </div>
             </div>
-            <div class="px-20 py-12 ml-28 relative">
-                <VolumeWeights v-on:changeWeight="currentWeight = $event" />
+            <div class="px-20 py-12 ml-28 relative z-50">
+                <VolumeWeights v-on:changeWeight="currentWeight = $event" class="z-50" />
             </div>
             <div class="flex px-20 pt-12">
                 <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
