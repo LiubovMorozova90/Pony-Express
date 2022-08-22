@@ -29,8 +29,8 @@
                 <div class="max-w-7xl mb-10">
                     <client-only>
                         <agile ref="carousel" :options="sliderOptions">
-                            <div v-for="shop in shops" :key="shop.id">                        
-                                <img :src="shop.img" class="w-80 h-52" />                      
+                            <div v-for="shop in shops" :key="shop.id" class="cursor-pointer w-80 h-64 mb-6">                        
+                                <img :src="shop.img" class="" />                      
                             </div>
                         </agile>
                     </client-only>
@@ -150,14 +150,6 @@ export default {
         dots: true,
         navButtons: false,
         slidesToShow: 4,
-        responsive: [
-          {
-            breakpoint: 1440,
-            settings: {
-            navButtons: true,
-            },
-          },
-        ],
       },    
         shops: [
             {img: require('~/static/img/slider-shop-amazon.svg')},
@@ -243,5 +235,53 @@ export default {
     content: url('static/img/forwarding-text.svg');
     padding-right: 12px;
 }
-		
+	
+</style>
+
+<style>
+.agile {
+    width: 100%;
+}
+
+.agile__actions {
+    margin-top: 20px;
+}
+
+.agile__dot {
+    margin: 0 10px;
+}
+
+.agile__dots {
+    bottom: 10px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.agile__dot button {
+    background-color: transparent;
+    background-color: #326544;
+	border-radius: 50%;
+	cursor: pointer;
+	display: block;
+	height: 16px;
+	font-size: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	transition-duration: .1s;
+	width: 16px;
+}
+
+.agile__dot button:hover,
+.agile__dot button:active {    
+    background-color: #6CBE37;
+}
+
+.agile__dot--current,
+.agile__dot--current:hover,
+.agile__dot--current button {
+    background-color: #6CBE37;    
+	border-radius: 50%;
+}
 </style>

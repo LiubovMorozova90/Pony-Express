@@ -1,7 +1,7 @@
 <template>
     <div class="grid-text border-b-2 border-lightgreen relative">
         <button v-on:click="isShown = !isShown" class="flex">
-            <span class="text-lightgrey relative">{{ value }}</span>
+            <span class="text-white relative">{{ value }}</span>
             <img v-bind:src="require('@/static/img/chevron-down.svg')" class="absolute ml-96 pl-6 z-40" />
         </button>
         <div v-show="isShown" class="border bg-lightgreen absolute w-full top-full px-2 py-2">                            
