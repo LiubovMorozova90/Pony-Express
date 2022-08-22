@@ -2,7 +2,7 @@
     <main>
         <div class="flex flex-row justife-between px-20 pt-12 pb-16">
             <div class="flex flex-col justify-start z-50 pb-20">
-                <p class="font-extrabold text-7xl tracking-wide text-white max-w-lg mb-12">Предоставляем адреса в США, странах Европы и Японии</p>
+                <p class="title-text text-white max-w-lg mb-12">Предоставляем адреса в США, странах Европы и Японии</p>
                 <p class="font-bold text-2xl leading-8 max-w-md">Покупайте в онлайн-магазинах США, Европы и Японии и отправляйте на свой адрес в любой город России</p>
             </div>
             <div class="z-40 -ml-7 mr-8" >
@@ -19,34 +19,25 @@
         </div>
         <div class="flex flex-col px-20 pt-12 pb-24">
             <div class="flex justify-between gap-10 items-center text-white pb-20 z-50">
-                <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
+                <p class="title-text w-min">Популярные магазины</p>
                 <p class="font-bold text-2xl leading-8 max-w-md">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
-                <button class="text-center border rounded-full w-60 px-4 py-2 mt-28">
-                    <span class="font-bold text-base text-center">Получить адрес за рубежом</span>
-                </button>
+                <button class="btn border w-60 mt-28">Получить адрес за рубежом</button>
             </div>
             <div class="flex flex-col items-center z-50">
                 <LandingMainSlider />                    
-                <button class="text-center rounded-full bg-lightgreen px-4 py-2">
-                    <span class="font-bold text-base text-center text-white">Все магазины</span>
-                </button>
+                <button class="btn text-white bg-lightgreen">Все магазины</button>
             </div>
         </div>
         <div class="flex px-20 pt-12 pb-4">
             <img v-bind:src="require('@/static/img/info-forwarding-img.png')" class="z-50" />
             <div class="flex flex-col bg-white px-20 py-12 z-50">
-                <p class="font-extrabold text-7xl tracking-wide max-w-xl mb-11">Как работает Mail Forwarding</p>
-                <div v-for="(forwarding, index) in forwardings" :key="`forwarding-${index}`" class="flex gap-2 mb-14 pr-28">
-                    <img :src="forwarding.img"/>
-                    <span class="font-normal text-lg leading-7">{{ forwarding.description }}</span>
-                </div>
-                <button class="text-center border rounded-full border-greenbasic w-60 px-4 py-2">
-                    <span class="font-bold text-base leading-6 text-greenbasic text-center">Получить адрес за рубежом</span>
-                </button>
+                <p class="title-text max-w-xl mb-11">Как работает Mail Forwarding</p>
+                <LandingMainMailForwarding />
+                <button class="btn border border-greenbasic text-greenbasic w-60">Получить адрес за рубежом</button>
             </div>
         </div>
         <div class="flex flex-col text-white px-20 pt-12 pb-28">
-            <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9 z-50">Рассчитайте стоимость доставки</p>
+            <p class="title-text max-w-3xl mb-9 z-50">Рассчитайте стоимость доставки</p>
             <div class="grid grid-cols-3 gap-6 z-50">
                 <p class="grid-text">Страна отправления</p>
                 <LandingMainDropdown :options-list="Departure" v-model:value="choiceDeparture" class="z-50" />
@@ -75,9 +66,7 @@
                     <p class="font-bold text-lg leading-5"> {{ }} дней</p>
                     <p class="font-bold text-3xl leading-10"> {{ }} $</p>
                 </div>
-                <button class="text-center rounded-full bg-lightgreen w-32 px-4 py-2">
-                    <span class="font-bold text-base leading-6 text-center">Подробнее</span>
-                </button>
+                <button class="btn bg-lightgreen w-32">Подробнее</button>
                 <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
             </div>
         </div>
@@ -86,7 +75,7 @@
         </div>
         <div class="flex px-20 pt-12">
             <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
-                <p class="font-extrabold text-7xl tracking-wide mb-11">Услуги Mail Forwarding</p>
+                <p class="title-text mb-11">Услуги Mail Forwarding</p>
                 <p class="font-bold text-2xl leading-7 mb-5">Основные услуги</p>
                 <div v-for="(service, index) in services" :key="`service-${index}`">
                     <div class="flex justify-between gap-4 border-t-2 py-5">
@@ -99,9 +88,7 @@
                         </div>
                     </div>                                        
                 </div>
-                <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2 mt-5">
-                    <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
-                </button>
+                <button class="btn border text-greenbasic border-greenbasic mt-5">Получить адрес за рубежом</button>
             </div>
             <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-8" />
         </div>
@@ -111,14 +98,12 @@
                 <img :src="require('@/static/img/main-forwarding-2.png')" class="absolute z-30 -mt-52 ml-32" />
             </div>
             <div class="flex flex-col w-1/2 z-50">
-                <p class="font-extrabold text-7xl tracking-wide mb-11">Доставка из США, Европы и Японии с PONY EXPRESS</p>
+                <p class="title-text mb-11">Доставка из США, Европы и Японии с PONY EXPRESS</p>
                 <div v-for="item in mainForwarding" :key="item.id">
                     <p v-html="item.title" class="forwarding-main-info font-normal text-xl leading-7 mb-6"></p>
                 </div>
                 <div class="mt-14">
-                    <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2 mt-5">
-                        <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
-                    </button>
+                    <button class="btn border text-greenbasic border-greenbasic mt-5">Получить адрес за рубежом</button>
                 </div>                
             </div>
         </div>
@@ -130,12 +115,14 @@
 import LandingMainDropDown from '~/components/LandingMain/LandingMainDropdown.vue';
 import VolumeWeights from '~/components/LandingMain/VolumeWeights.vue';
 import LandingMainSlide from './LandingMainSlider.vue';
+import LandingMainMailForwarding from './LandingMainMailForwarding.vue'
 
 export default {
     components: {
     LandingMainDropDown,
     VolumeWeights,
-    LandingMainSlide
+    LandingMainSlide,
+    LandingMainMailForwarding,
 },
     data: () => ({         
         forwardings: [
@@ -213,6 +200,14 @@ export default {
 .forwarding-main-info:before {
     content: url('static/img/forwarding-text.svg');
     padding-right: 12px;
+}
+
+.title-text {
+    @apply font-extrabold text-7xl tracking-wide;
+}
+
+.btn {
+    @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
 }
 	
 </style>
