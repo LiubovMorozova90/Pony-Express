@@ -34,13 +34,13 @@
           <p class="footer-title">Присоединяйтесь</p>
           <div class="flex justify-between z-50">
             <a href="#"
-              ><img :src="require('@/static/img/footer-media-vk.svg')"
+              ><img :src="require('@/static/img/footer-media-vk.svg')" alt=""
             /></a>
             <a href="#"
-              ><img :src="require('@/static/img/footer-media-tg.svg')"
+              ><img :src="require('@/static/img/footer-media-tg.svg')" alt=""
             /></a>
             <a href="#"
-              ><img :src="require('@/static/img/footer-media-yt.svg')"
+              ><img :src="require('@/static/img/footer-media-yt.svg')" alt=""
             /></a>
           </div>
         </div>
