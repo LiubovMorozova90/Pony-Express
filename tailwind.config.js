@@ -16,10 +16,10 @@ module.exports = {
         circe: 'Circe',
       },
       width: {
-        '2000': '2000px',
+        '2050': '2050px',
       },
       height: {
-        '900': '900px'
+        '800': '800px'
       }
     }
   }

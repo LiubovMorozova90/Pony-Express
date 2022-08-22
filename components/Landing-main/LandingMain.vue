@@ -1,12 +1,12 @@
 <template>
     <main>
-            <div class="info-delivery-content flex flex-row justife-between px-20 pt-12 pb-32">
+            <div class="info-delivery-content flex flex-row justife-between px-20 pt-12 pb-16">
                 <div class="flex flex-col justify-start z-50 pb-20">
                     <p class="font-extrabold text-7xl tracking-wide text-white max-w-lg mb-12">Предоставляем адреса в США, странах Европы и Японии</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Покупайте в онлайн-магазинах США, Европы и Японии и отправляйте на свой адрес в любой город России</p>
                 </div>
                 <div class="z-40 -ml-7 mr-8" >
-                    <img v-bind:src="require('@/static/img/info-delivery-1.png')" class="relative z-20"/>
+                    <img v-bind:src="require('@/static/img/info-delivery-1.png')" class="relative -mt-12 z-20"/>
                     <img v-bind:src="require('@/static/img/info-delivery-2.png')" class="absolute -mt-16 -ml-9 z-30" />
                 </div>
                 <div class="flex flex-row pt-64 z-50">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col px-20 pt-12 pb-32">
+            <div class="flex flex-col px-20 pt-12 pb-24">
                 <div class="flex justify-between gap-10 items-center text-white pb-20 z-50">
                     <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
@@ -40,7 +40,7 @@
                     </button>
                 </div>
             </div>
-            <div class="flex px-20 pt-12 pb-32">
+            <div class="flex px-20 pt-12 pb-4">
                 <img v-bind:src="require('@/static/img/info-forwarding-img.png')" class="z-50" />
                 <div class="flex flex-col bg-white px-20 py-12 z-50">
                     <p class="font-extrabold text-7xl tracking-wide max-w-xl mb-11">Как работает Mail Forwarding</p>
@@ -53,7 +53,7 @@
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col text-white px-20 pt-12 pb-32">
+            <div class="flex flex-col text-white px-20 pt-12 pb-28">
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9 z-50">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6 z-50">
                     <p class="grid-text">Страна отправления</p>
