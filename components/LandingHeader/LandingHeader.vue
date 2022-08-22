@@ -1,20 +1,7 @@
 <template>
     <header class="header">
        <div class="px-20">
-            <div class="flex justify-between items-center pt-7 mb-32">            
-                <img v-bind:src="require('@/static/img/header-navigation-logo.svg')" />
-                <ul class="font-bold text-lg">
-                    <li class="navbar"><a href="#">Адреса</a></li>
-                    <li class="navbar"><a href="#">Магазины</a></li>
-                    <li class="navbar"><a href="#">Как это работает</a></li>
-                    <li class="navbar"><a href="#">Тарифы</a></li>
-                    <li class="navbar"><a href="#">Услуги</a></li>
-                    <li class="inline-block"><a href="#">Доставка</a></li>
-                </ul> 
-                <button class="btn-personal-area">
-                    <span class="btn-personal-area-text">Личный кабинет</span>
-                </button>            
-            </div>
+            <LandingHeaderNavigation />
             <div class="flex flex-col justify-start pb-20">
                 <p class="uppercase font-extrabold leading-23 text-7xl tracking-wide max-w-2xl mb-12">зарубежный sale</p>
                 <p class="font-bold text-2xl max-w-xs mb-44">Выгодные онлайн покупки за рубежом с быстрой доставкой</p>
@@ -22,39 +9,17 @@
                     <span class="btn-title-text">Получить адрес за рубежом</span>
                 </button>
             </div>
-            <div class="flex justify-between items-start pb-32">
-                <div v-for="(benefit, index) in benefits" :key="`benefit-${index}`" class="advantage w-1/4 z-50">
-                    <div class="w-22 h-22">
-                        <img :src="benefit.img" class="z-50" />
-                    </div>
-                    <div class="flex flex-col">
-                        <span v-html="benefit.title" class="flex flex-col font-bold text-2xl leading-7 mb-3" />
-                        <span class="font-normal text-lg leading-6 max-w-xs">{{ benefit.description }}</span>
-                    </div>                
-                </div>
-            </div>
+            <LandingHeaderBenefits />
         </div> 
     </header> 
 </template>
 
 <script>
+import LandingHeaderNavigation from './LandingHeaderNavigation.vue';
+import LandingHeaderBenefits from './LandingHeaderBenefits.vue';
+
 export default {
-    data: () => ({
-        benefits: [
-            {title: 'Быстрая <br /> доставка', 
-            description: 'Выбирайте для доставки удобный пункт выдачи или доставку курьером', 
-            img: require('~/static/img/delivery.svg')
-            },
-            {title: 'Бесплатная <br /> упаковка', 
-            description: 'Экономьте за счет уменьшения веса и объема посылки до 80%', 
-            img: require('~/static/img/package.svg')
-            },
-            {title: 'Бесплатная <br /> консолидация', 
-            description: 'Объединяйте несколько посылок в одну для экономии на доставке', 
-            img: require('~/static/img/consolidation.svg')
-            }
-        ]
-    })
+    components: { LandingHeaderNavigation, LandingHeaderBenefits }
 }
 </script>
 
@@ -62,18 +27,6 @@ export default {
 .header {
     background-image: url('static/img/header-fon.png');
     background-size: cover;
-}
-
-.navbar {
-    @apply inline-block mr-12;
-}
-
-.btn-personal-area {
-    @apply text-center font-bold border border-greenbasic rounded-full px-4 py-2;
-}
-
-.btn-personal-area-text {
-    @apply text-base text-center text-greenbasic; 
 }
 
 .btn-title {
@@ -84,7 +37,4 @@ export default {
     @apply text-center text-xl leading-8 text-white;
 }
 
-.advantage {
-    @apply flex gap-4;
-}
 </style>

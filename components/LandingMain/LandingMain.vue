@@ -89,7 +89,7 @@
                 <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
             </div>
         </div>
-        <div class="px-20 py-12 ml-28 relative z-50">
+        <div class="px-20 pb-12 ml-28 relative z-50">
             <VolumeWeights v-on:changeWeight="currentWeight = $event" class="z-50" />
         </div>
         <div class="flex px-20 pt-12">
