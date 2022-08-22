@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Header from '~/components/Landing-header/Header.vue';
+import Header from '~/components/LandingHeader/LandingHeader.vue';
 import LandingMain from '~/components/LandingMain/LandingMain.vue';
 
 export default {
