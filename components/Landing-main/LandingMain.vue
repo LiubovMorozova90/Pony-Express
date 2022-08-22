@@ -1,10 +1,6 @@
 <template>
-    <main class="relative">  
-        <div v-for="item in 6" :key="`bg-rectangle-${item}`" class="absolute w-2000 h-800 bg-greenbasic" :class="[
-            `top-${item * 2}/12`
-        ]"></div>      
-        <div class="info-delivery pb-32">
-            <div class="info-delivery-content flex flex-row justife-between px-20 pt-12">
+    <main>
+            <div class="info-delivery-content flex flex-row justife-between px-20 pt-12 pb-32">
                 <div class="flex flex-col justify-start z-50 pb-20">
                     <p class="font-extrabold text-7xl tracking-wide text-white max-w-lg mb-12">Предоставляем адреса в США, странах Европы и Японии</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Покупайте в онлайн-магазинах США, Европы и Японии и отправляйте на свой адрес в любой город России</p>
@@ -20,10 +16,8 @@
                         <img v-bind:src="require('@/static/img/info-country-USA.svg')" class="relative z-40" /> 
                     </div>
                 </div>
-            </div> 
-        </div> 
-        <div class="info-shop pb-32">
-            <div class="flex flex-col px-20 pt-12">
+            </div>
+            <div class="flex flex-col px-20 pt-12 pb-32">
                 <div class="flex justify-between gap-10 items-center text-white pb-20">
                     <p class="font-extrabold text-7xl tracking-wide w-min">Популярные магазины</p>
                     <p class="font-bold text-2xl leading-8 max-w-md">Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии. Воспользуйтесь скидками, распродажами и выгодными предложениями от любимых брендов</p>
@@ -46,9 +40,7 @@
                     </button>
                 </div>
             </div>
-        </div> 
-        <div class="info-forwarding pb-32">
-            <div class="flex px-20 pt-12">
+            <div class="flex px-20 pt-12 pb-32">
                 <img v-bind:src="require('@/static/img/info-forwarding-img.png')" />
                 <div class="flex flex-col bg-white px-20 py-12">
                     <p class="font-extrabold text-7xl tracking-wide max-w-xl mb-11">Как работает Mail Forwarding</p>
@@ -61,9 +53,7 @@
                     </button>
                 </div>
             </div>
-        </div>  
-        <div class="calculation-price pb-32">
-            <div class="flex flex-col text-white px-20 pt-12">
+            <div class="flex flex-col text-white px-20 pt-12 pb-32">
                 <p class="font-extrabold text-7xl tracking-wide max-w-3xl mb-9">Рассчитайте стоимость доставки</p>
                 <div class="grid grid-cols-3 gap-6">
                     <p class="grid-text">Страна отправления</p>
@@ -98,14 +88,10 @@
                     </button>
                     <p class="text-mass font-bold text-lg leading-5">Примерный объемный вес посылок</p>
                 </div>
-            </div>            
-        </div>
-        <div class="package">
+            </div>
             <div class="px-20 py-12 ml-28 relative">
                 <VolumeWeights v-on:changeWeight="currentWeight = $event" />
             </div>
-        </div>
-        <div class="mail-forwarding">
             <div class="flex px-20 pt-12">
                 <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
                     <p class="font-extrabold text-7xl tracking-wide mb-11">Услуги Mail Forwarding</p>
@@ -127,9 +113,7 @@
                 </div>
                 <img v-bind:src="require('@/static/img/mail-forwarding.png')" class="relative z-30 left-2/4 pl-7" />
             </div>
-        </div>
-        <div class="forwarding-main">
-            <div class="forwarding-main-text flex gap-56 px-20">
+            <div class="forwarding-main-text flex gap-56 px-20 mb-40">
                 <div>
                     <img :src="require('@/static/img/main-forwarding-1.png')" class="relative z-20" />
                     <img :src="require('@/static/img/main-forwarding-2.png')" class="absolute z-30 -mt-52 ml-32" />
@@ -137,14 +121,13 @@
                 <div class="flex flex-col w-1/2">
                     <p class="font-extrabold text-7xl tracking-wide mb-11">Доставка из США, Европы и Японии с PONY EXPRESS</p>
                     <div v-for="item in mainForwarding" :key="item.id">
-                        <p v-html="item.title" class="forwarding-main-info"></p>
+                        <p v-html="item.title" class="forwarding-main-info font-normal text-xl leading-7 mb-6"></p>
                     </div>
                     <button class="text-center font-bold border border-greenbasic rounded-full px-4 py-2 mt-5">
                         <span class="text-base text-center text-greenbasic">Получить адрес за рубежом</span>
                     </button>
                 </div>
             </div>
-        </div>
     </main>
 </template>
 
@@ -285,7 +268,8 @@ export default {
 }
 
 .forwarding-main-info:before {
-    content: url('static/img/forwarding-text.svg');;
+    content: url('static/img/forwarding-text.svg');
+    padding-right: 12px;
 }
 		
 </style>
