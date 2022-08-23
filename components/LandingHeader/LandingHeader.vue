@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="px-20">
+    <div class="container">
       <LandingHeaderNavigation />
       <div class="flex flex-col justify-start pb-20">
         <p
@@ -37,5 +37,17 @@ export default {
 
 .btn {
   @apply font-bold text-center rounded-full px-4 py-2;
+}
+
+.container {
+  max-width: 1281px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
 }
 </style>

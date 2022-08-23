@@ -4,31 +4,15 @@
       <div class="flex justify-between pah-48 px-20">
         <div class="footer-main">
           <p class="footer-title">Компания</p>
-          <div class="footer-content">
-            <a href="#"><p>Контакты</p></a>
-            <a href="#"><p>Пользовательское соглашение</p></a>
-            <a href="#"><p>Политика конфиденциальности</p></a>
-          </div>
+          <LandingFooterCompany />
         </div>
         <div class="footer-main">
           <p class="footer-title">Информация</p>
-          <div class="footer-content">
-            <a href="#"><p>Как это работает</p></a>
-            <a href="#"><p>Популярные магазины</p></a>
-            <a href="#"><p>Способы оплаты</p></a>
-            <a href="#"><p>Лимиты</p></a>
-            <a href="#"><p>Ограничения по услуге</p></a>
-            <a href="#"><p>Условия доставки</p></a>
-          </div>
+          <LandingFooterInfo />
         </div>
         <div class="footer-main">
           <p class="footer-title">Полезное</p>
-          <div class="footer-content">
-            <a href="#"><p>Доставка</p></a>
-            <a href="#"><p>Отслеживание</p></a>
-            <a href="#"><p>Таблица размеров</p></a>
-            <a href="#"><p>Калькулятор</p></a>
-          </div>
+          <LandingFooterUseful />
         </div>
         <div class="footer-main">
           <p class="footer-title">Присоединяйтесь</p>
@@ -53,6 +37,20 @@
     </p>
   </footer>
 </template>
+
+<script>
+import LandingFooterCompany from './LandingFooterCompany.vue';
+import LandingFooterInfo from './LandingFooterInfo.vue';
+import LandingFooterUseful from './LandingFooterUseful.vue'
+
+export default {
+  components: {
+    LandingFooterCompany,
+    LandingFooterInfo,
+    LandingFooterUseful,
+  },
+}
+</script>
 
 <style scoped>
 .footer-main {
