@@ -16,17 +16,7 @@
         </div>
         <div class="footer-main">
           <p class="footer-title">Присоединяйтесь</p>
-          <div class="flex justify-between z-50">
-            <a href="#"
-              ><img :src="require('@/static/img/footer-media-vk.svg')" alt=""
-            /></a>
-            <a href="#"
-              ><img :src="require('@/static/img/footer-media-tg.svg')" alt=""
-            /></a>
-            <a href="#"
-              ><img :src="require('@/static/img/footer-media-yt.svg')" alt=""
-            /></a>
-          </div>
+          <LandingFooterSocial />
         </div>
       </div>
     </div>
@@ -39,15 +29,17 @@
 </template>
 
 <script>
-import LandingFooterCompany from './LandingFooterCompany.vue';
-import LandingFooterInfo from './LandingFooterInfo.vue';
+import LandingFooterCompany from './LandingFooterCompany.vue'
+import LandingFooterInfo from './LandingFooterInfo.vue'
 import LandingFooterUseful from './LandingFooterUseful.vue'
+import LandingFooterSocial from './LandingFooterSocial.vue'
 
 export default {
   components: {
     LandingFooterCompany,
     LandingFooterInfo,
     LandingFooterUseful,
+    LandingFooterSocial,
   },
 }
 </script>
