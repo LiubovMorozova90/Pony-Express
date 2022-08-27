@@ -1,14 +1,33 @@
 <template>
   <div class="nav-content">
-    <img :src="require('@/static/img/header-navigation-logo.svg')" alt="" />
-    <ul v-for="nav in navigations" :key="nav.id" class="nav-text">
-      <li class="navbar">
-        <a href="#">{{ nav.title }}</a>
-      </li>
-    </ul>
-    <button class="btn border text-greenbasic border-greenbasic z-50">
-      Личный кабинет
-    </button>
+    <div class="nav-btn z-50">
+      <button
+        v-if="show"
+        aria-label="Открыть меню"
+        class="btn-menu z-50"
+        @click="show = !show"
+      >
+        <img :src="require('@/static/img/close-menu.svg')" alt="" />
+      </button>
+      <button
+        v-else
+        aria-label="Закрыть меню"
+        class="btn-menu z-50"
+        @click="show = !show"
+      >
+        <img :src="require('@/static/img/burger-menu.svg')" alt="" />
+      </button>
+    </div>
+    <div v-if="show" class="absolute block">
+      <ul v-for="nav in navigations" :key="nav.id" class="nav-text">
+        <li class="navbar">
+          <a href="#">{{ nav.title }}</a>
+        </li>
+      </ul>
+      <button class="btn border text-greenbasic border-greenbasic z-50">
+        Личный кабинет
+      </button>
+    </div>
   </div>
 </template>
 
@@ -23,6 +42,7 @@ export default {
       { title: 'Услуги' },
       { title: 'Доставка' },
     ],
+    show: false,
   }),
 }
 </script>
@@ -41,7 +61,11 @@ export default {
 }
 
 .nav-content {
-  @apply flex justify-between items-center pt-7 mb-32;
+  @apply flex justify-between items-center mb-32;
+}
+
+.nav-btn {
+  @apply hidden;
 }
 
 @media (max-width: 1024px) {
@@ -61,6 +85,12 @@ export default {
 
   .nav-content {
     margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-btn {
+    @apply block;
   }
 }
 </style>
