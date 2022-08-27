@@ -1,43 +1,10 @@
 <template>
   <main>
-    <div class="flex flex-row justife-between px-20 pt-12 pb-16">
-      <div class="flex flex-col justify-start z-50 pb-20">
-        <p class="title-text text-white max-w-lg mb-12">
-          Предоставляем адреса в США, странах Европы и Японии
-        </p>
-        <p class="font-bold text-2xl leading-8 max-w-md">
-          Покупайте в онлайн-магазинах США, Европы и Японии и отправляйте на
-          свой адрес в любой город России
-        </p>
-      </div>
-      <div class="z-40 -ml-7 mr-8">
-        <img
-          alt=""
-          :src="require('@/static/img/info-delivery-1.png')"
-          class="relative -mt-12 z-20"
-        />
-        <img
-          alt=""
-          :src="require('@/static/img/info-delivery-2.png')"
-          class="absolute -mt-16 -ml-9 z-30"
-        />
-      </div>
-      <div class="flex flex-row pt-64 z-50">
-        <img alt="" :src="require('@/static/img/info-country.svg')" />
-        <div class="-mt-20 -ml-36">
-          <p
-            class="font-extrabold text-4xl leading-10 tracking-wide text-white absolute pt-16 pl-7 z-50"
-          >
-            США
-          </p>
-          <img
-            alt=""
-            :src="require('@/static/img/info-country-USA.svg')"
-            class="relative z-40"
-          />
-        </div>
-      </div>
+    <div class="container block">
+      <LandingMainInfoTitle />
+      
     </div>
+    
     <div class="flex flex-col px-20 pt-12 pb-24">
       <div
         class="flex justify-between gap-10 items-center text-white pb-20 z-50"
@@ -171,6 +138,7 @@ import LandingMainServices from './LandingMainServices.vue'
 import LandingMainForwarding from './LandingMainForwarding.vue'
 import VolumeWeights from '~/components/LandingMain/VolumeWeights.vue'
 import LandingMainDropDown from '~/components/LandingMain/LandingMainDropdown.vue'
+import LandingMainInfoTitle from '~/components/LandingMain/LandingMainInfoTitle.vue'
 
 export default {
   components: {
@@ -180,6 +148,7 @@ export default {
     LandingMainMailForwarding,
     LandingMainServices,
     LandingMainForwarding,
+    LandingMainInfoTitle,
   },
   data: () => ({
     Departure: [
@@ -222,5 +191,10 @@ export default {
 
 .btn {
   @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
+}
+
+.container {
+  max-width: 1281px;
+  margin: 0 auto;
 }
 </style>
