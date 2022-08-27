@@ -116,10 +116,6 @@ export default {
   text-align: end;
 }
 
-.forwarding-main-text {
-  padding-top: 650px;
-}
-
 .title-text {
   @apply font-extrabold text-7xl tracking-wide;
 }
@@ -131,5 +127,53 @@ export default {
 .container {
   max-width: 1281px;
   margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 840px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 668px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 395px) {
+  .container {
+    max-width: 350px;
+  }
 }
 </style>
