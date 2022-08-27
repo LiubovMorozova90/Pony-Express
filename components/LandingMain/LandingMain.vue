@@ -3,23 +3,11 @@
     <div class="container block">
       <LandingMainInfoTitle />
       <LandingMainPopularStores />
+      <LandingMainMailForwarding />
     </div>
 
     
-    <div class="flex px-20 pt-12 pb-4">
-      <img
-        alt=""
-        :src="require('@/static/img/info-forwarding-img.png')"
-        class="z-50"
-      />
-      <div class="flex flex-col bg-white px-20 py-12 z-50">
-        <p class="title-text max-w-xl mb-11">Как работает Mail Forwarding</p>
-        <LandingMainMailForwarding />
-        <button class="btn border border-greenbasic text-greenbasic w-60">
-          Получить адрес за рубежом
-        </button>
-      </div>
-    </div>
+    
     <div class="flex flex-col text-white px-20 pt-12 pb-28">
       <p class="title-text max-w-3xl mb-9 z-50">
         Рассчитайте стоимость доставки

@@ -1,14 +1,25 @@
 <template>
-  <div>
-    <div
-      v-for="(forwarding, index) in forwardings"
-      :key="`forwarding-${index}`"
-      class="flex gap-2 mb-14 pr-28"
-    >
-      <img :src="forwarding.img" alt="" />
-      <span class="font-normal text-lg leading-7">{{
-        forwarding.description
-      }}</span>
+  <div class="flex pt-12 pb-4">
+    <img
+      alt=""
+      :src="require('@/static/img/info-forwarding-img.png')"
+      class="z-50"
+    />
+    <div class="flex flex-col bg-white px-20 py-12 z-50">
+      <p class="title-text max-w-xl mb-11">Как работает Mail Forwarding</p>
+      <div
+        v-for="(forwarding, index) in forwardings"
+        :key="`forwarding-${index}`"
+        class="flex gap-2 mb-14 pr-28"
+      >
+        <img :src="forwarding.img" alt="" />
+        <span class="font-normal text-lg leading-7">{{
+          forwarding.description
+        }}</span>
+      </div>
+      <button class="btn border border-greenbasic text-greenbasic w-60">
+        Получить адрес за рубежом
+      </button>
     </div>
   </div>
 </template>
@@ -41,3 +52,13 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+.title-text {
+  @apply font-extrabold text-7xl tracking-wide;
+}
+
+.btn {
+  @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
+}
+</style>
