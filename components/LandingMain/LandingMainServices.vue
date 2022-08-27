@@ -1,20 +1,32 @@
 <template>
-  <div>
-    <div v-for="(service, index) in services" :key="`service-${index}`">
-      <div class="flex justify-between gap-4 border-t-2 py-5">
-        <div class="flex flex-col gap-2 font-normal">
-          <span class="text-lg leading-7">{{ service.title }}</span>
-          <span
-            v-if="service.remark"
-            class="text-xs leading-3 text-aluminum max-w-xs"
-            >{{ service.remark }}</span
-          >
-        </div>
-        <div>
-          <span class="font-bold text-lg leading-7">{{ service.price }}</span>
+  <div class="flex pt-12">
+    <div class="bg-white absolute z-50 max-w-3xl py-12 px-20 mt-8">
+      <p class="title-text mb-11">Услуги Mail Forwarding</p>
+      <p class="font-bold text-2xl leading-7 mb-5">Основные услуги</p>
+      <div v-for="(service, index) in services" :key="`service-${index}`">
+        <div class="flex justify-between gap-4 border-t-2 py-5">
+          <div class="flex flex-col gap-2 font-normal">
+            <span class="text-lg leading-7">{{ service.title }}</span>
+            <span
+              v-if="service.remark"
+              class="text-xs leading-3 text-aluminum max-w-xs"
+              >{{ service.remark }}</span
+            >
+          </div>
+          <div>
+            <span class="font-bold text-lg leading-7">{{ service.price }}</span>
+          </div>
         </div>
       </div>
+      <button class="btn border text-greenbasic border-greenbasic mt-5">
+        Получить адрес за рубежом
+      </button>
     </div>
+    <img
+      alt=""
+      :src="require('@/static/img/mail-forwarding.png')"
+      class="relative z-30 left-2/4 pl-8"
+    />
   </div>
 </template>
 
@@ -74,3 +86,13 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+.title-text {
+  @apply font-extrabold text-7xl tracking-wide;
+}
+
+.btn {
+  @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
+}
+</style>
