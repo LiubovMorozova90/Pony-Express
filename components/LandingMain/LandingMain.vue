@@ -2,26 +2,10 @@
   <main>
     <div class="container block">
       <LandingMainInfoTitle />
-      
+      <LandingMainPopularStores />
     </div>
+
     
-    <div class="flex flex-col px-20 pt-12 pb-24">
-      <div
-        class="flex justify-between gap-10 items-center text-white pb-20 z-50"
-      >
-        <p class="title-text w-min">Популярные магазины</p>
-        <p class="font-bold text-2xl leading-8 max-w-md">
-          Устройте шоппинг без границ в онлайн-магазинах СШA, Европы и Японии.
-          Воспользуйтесь скидками, распродажами и выгодными предложениями от
-          любимых брендов
-        </p>
-        <button class="btn border w-60 mt-28">Получить адрес за рубежом</button>
-      </div>
-      <div class="flex flex-col items-center z-50">
-        <landing-main-slide />
-        <button class="btn text-white bg-lightgreen">Все магазины</button>
-      </div>
-    </div>
     <div class="flex px-20 pt-12 pb-4">
       <img
         alt=""
@@ -132,23 +116,23 @@
 </template>
 
 <script>
-import LandingMainSlide from './LandingMainSlider.vue'
 import LandingMainMailForwarding from './LandingMainMailForwarding.vue'
 import LandingMainServices from './LandingMainServices.vue'
 import LandingMainForwarding from './LandingMainForwarding.vue'
 import VolumeWeights from '~/components/LandingMain/VolumeWeights.vue'
 import LandingMainDropDown from '~/components/LandingMain/LandingMainDropdown.vue'
 import LandingMainInfoTitle from '~/components/LandingMain/LandingMainInfoTitle.vue'
+import LandingMainPopularStores from '~/components/LandingMain/LandingMainPopularStores.vue'
 
 export default {
   components: {
     LandingMainDropDown,
     VolumeWeights,
-    LandingMainSlide,
     LandingMainMailForwarding,
     LandingMainServices,
     LandingMainForwarding,
     LandingMainInfoTitle,
+    LandingMainPopularStores,
   },
   data: () => ({
     Departure: [
