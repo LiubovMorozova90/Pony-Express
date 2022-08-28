@@ -1,30 +1,32 @@
 <template>
   <footer class="bg-black">
-    <div class="pt-12">
-      <div class="flex justify-between pah-48 px-20">
-        <div class="footer-main">
-          <p class="footer-title">Компания</p>
-          <LandingFooterCompany />
-        </div>
-        <div class="footer-main">
-          <p class="footer-title">Информация</p>
-          <LandingFooterInfo />
-        </div>
-        <div class="footer-main">
-          <p class="footer-title">Полезное</p>
-          <LandingFooterUseful />
-        </div>
-        <div class="footer-main">
-          <p class="footer-title">Присоединяйтесь</p>
-          <LandingFooterSocial />
+    <div class="container block">
+      <div class="pt-12">
+        <div class="flex justify-between">
+          <div class="footer-main">
+            <p class="footer-title">Компания</p>
+            <LandingFooterCompany />
+          </div>
+          <div class="footer-main">
+            <p class="footer-title">Информация</p>
+            <LandingFooterInfo />
+          </div>
+          <div class="footer-main">
+            <p class="footer-title">Полезное</p>
+            <LandingFooterUseful />
+          </div>
+          <div class="footer-main">
+            <p class="footer-title">Присоединяйтесь</p>
+            <LandingFooterSocial />
+          </div>
         </div>
       </div>
+      <p
+        class="text-center text-aluminum font-normal text-xl leading-7 pt-12 pb-6"
+      >
+        © Pony Express 2021
+      </p>
     </div>
-    <p
-      class="text-center text-aluminum font-normal text-xl leading-7 pt-12 pb-6"
-    >
-      © Pony Express 2021
-    </p>
   </footer>
 </template>
 
@@ -55,5 +57,58 @@ export default {
 
 .footer-content {
   @apply text-aluminum font-normal text-base leading-6;
+}
+
+.container {
+  max-width: 1281px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 840px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 668px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 395px) {
+  .container {
+    max-width: 350px;
+  }
 }
 </style>

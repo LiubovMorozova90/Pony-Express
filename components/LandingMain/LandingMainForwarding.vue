@@ -1,18 +1,18 @@
 <template>
   <div class="forwarding-main-text flex gap-56 mb-40">
-    <div>
+    <div class="section-img">
       <img
         alt=""
         :src="require('@/static/img/main-forwarding-1.png')"
-        class="relative z-20"
+        class="img-main relative z-20"
       />
       <img
         alt=""
         :src="require('@/static/img/main-forwarding-2.png')"
-        class="absolute z-30 -mt-52 ml-32"
+        class="img-hidden absolute z-30 -mt-52 ml-32"
       />
     </div>
-    <div class="flex flex-col w-1/2 z-50">
+    <div class="content flex flex-col bg-main w-1/2 z-50">
       <p class="title-text mb-11">
         Доставка из США, Европы и Японии с PONY EXPRESS
       </p>
@@ -84,5 +84,80 @@ export default {
 
 .btn {
   @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
+}
+
+@media (max-width: 1024px) {
+  .img-hidden {
+    @apply hidden;
+  }
+
+  .forwarding-main-text {
+    @apply gap-16;
+  }
+}
+
+@media (max-width: 840px) {
+  .forwarding-main-text {
+    margin-top: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-text {
+    @apply text-5xl;
+  }
+
+  .content {
+    @apply absolute w-full px-10 py-10 mt-72;
+  }
+
+  .section-img {
+    @apply relative;
+  }
+
+  .img-main {
+    @apply -mt-64 ml-20;
+  }
+}
+
+@media (max-width: 640px) {
+  .img-main {
+    @apply ml-5;
+  }
+
+  .content {
+    @apply -ml-12;
+  }
+}
+
+@media (max-width: 540px) {
+  .title-text {
+    @apply text-3xl leading-9;
+  }
+
+  .btn {
+    min-width: 100%;
+  }
+
+  .img-main {
+    @apply -mt-40 ml-2;
+  }
+}
+
+@media (max-width: 440px) {
+  .img-main {
+    @apply mt-20 ml-0;
+  }
+
+  .content {
+    margin-top: 500px;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .img-main {
+    @apply mt-28;
+  }
 }
 </style>

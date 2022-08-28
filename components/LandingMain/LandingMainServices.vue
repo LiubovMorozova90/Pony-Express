@@ -102,7 +102,7 @@ export default {
 
 @media (max-width: 1024px) {
   .content {
-    @apply max-w-2xl;
+    @apply bg-main max-w-2xl;
   }
 }
 
