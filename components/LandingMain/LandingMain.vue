@@ -4,12 +4,12 @@
       <LandingMainInfoTitle />
       <LandingMainPopularStores />
       <LandingMainMailForwarding />
-      <div class="flex flex-col text-white pt-12 pb-28">
+      <div class="content flex flex-col text-white pt-12 pb-28">
         <p class="title-text max-w-3xl mb-9 z-50">
           Рассчитайте стоимость доставки
         </p>
-        <div class="grid grid-cols-3 gap-6 z-50">
-          <p class="grid-text">Страна отправления</p>
+        <div class="section-main grid grid-cols-3 gap-6 z-50">
+          <p class="grid-text text-t">Страна отправления</p>
           <landing-main-drop-down
             v-model="choiceDeparture"
             :options-list="Departure"
@@ -26,7 +26,7 @@
               <img alt="" :src="require('@/static/img/sum.svg')" />
             </button>
           </div>
-          <p class="grid-text row-span-3">Адрес доставки</p>
+          <p class="grid-text text-t row-span-3">Адрес доставки</p>
           <landing-main-drop-down
             v-model="choiceDelivery"
             :options-list="Delivery"
@@ -53,7 +53,7 @@
           </p>
         </div>
       </div>
-      <div class="relative z-50 pb-12 ml-28">
+      <div class="section-weight relative z-50 pb-12 ml-28">
         <VolumeWeights class="z-50" @changeWeight="currentWeight = $event" />
       </div>
       <LandingMainServices />
@@ -129,11 +129,23 @@ export default {
   .container {
     max-width: 1100px;
   }
+
+  .section-weight {
+    @apply ml-0;
+  }
 }
 
 @media (max-width: 1024px) {
   .container {
     max-width: 900px;
+  }
+
+  .content {
+    @apply pt-32;
+  }
+
+  .section-weight {
+    @apply -mt-20;
   }
 }
 
@@ -141,11 +153,27 @@ export default {
   .container {
     max-width: 740px;
   }
+
+  .section-weight {
+    @apply -mt-32;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 668px;
+  }
+
+  .section-main {
+    @apply flex flex-col gap-8;
+  }
+
+  .title-text {
+    @apply text-5xl;
+  }
+
+  .text-t {
+    @apply text-center;
   }
 }
 
@@ -159,17 +187,41 @@ export default {
   .container {
     max-width: 440px;
   }
+
+  .title-text {
+    @apply text-3xl leading-9;
+  }
+
+  .btn {
+    min-width: 100%;
+  }
+
+  .text-mass {
+    @apply text-center;
+  }
+
+  .section-weight {
+    @apply hidden;
+  }
 }
 
 @media (max-width: 440px) {
   .container {
     max-width: 400px;
   }
+
+  .content {
+    @apply pt-48;
+  }
 }
 
 @media (max-width: 395px) {
   .container {
     max-width: 350px;
+  }
+
+  .content {
+    @apply pt-72;
   }
 }
 </style>

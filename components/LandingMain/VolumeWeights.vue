@@ -352,3 +352,29 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+@media (max-width: 1024px) {
+  svg {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 840px) {
+  svg {
+    max-width: 740px;
+  }
+}
+
+@media (max-width: 768px) {
+  svg {
+    max-width: 668px;
+  }
+}
+
+@media (max-width: 640px) {
+  svg {
+    max-width: 540px;
+  }
+}
+</style>

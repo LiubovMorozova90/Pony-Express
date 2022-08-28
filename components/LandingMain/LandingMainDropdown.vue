@@ -4,7 +4,7 @@
       <span class="text-white relative">{{ value }}</span>
       <img
         :src="require('@/static/img/chevron-down.svg')"
-        class="absolute ml-96 pl-6 z-40"
+        class="main-img absolute ml-96 pl-2 z-40"
         alt=""
       />
     </button>
@@ -56,5 +56,54 @@ export default {
 .choice-country:hover {
   background-color: #00833e;
   cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .main-img {
+    @apply ml-80 pl-0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-img {
+    @apply ml-64;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-img {
+    @apply ml-48;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-img {
+    margin-left: 640px;
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-img {
+    margin-left: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  .main-img {
+    margin-left: 400px;
+  }
+}
+
+@media (max-width: 440px) {
+  .main-img {
+    margin-left: 370px;
+  }
+}
+
+@media (max-width: 395px) {
+  .main-img {
+    margin-left: 300px;
+  }
 }
 </style>
