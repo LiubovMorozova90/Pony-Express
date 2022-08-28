@@ -18,7 +18,7 @@
         <img :src="require('@/static/img/burger-menu.svg')" alt="" />
       </button>
     </div>
-    <div v-if="show" class="absolute block">
+    <div v-if="show" class="menu block">
       <ul v-for="nav in navigations" :key="nav.id" class="nav-text">
         <li class="navbar">
           <a href="#">{{ nav.title }}</a>
@@ -91,6 +91,28 @@ export default {
 @media (max-width: 768px) {
   .nav-btn {
     @apply block;
+  }
+
+  .nav-content {
+    margin-top: 40px;
+  }
+
+  .menu {
+    @apply bg-white absolute mt-36 -ml-36 px-10 py-10;
+  }
+
+  .btn {
+    max-width: 100%;
+    background-color: #00833e;
+    color: white;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu {
+    padding-bottom: 500px;
+    margin-top: 600px;
   }
 }
 </style>
