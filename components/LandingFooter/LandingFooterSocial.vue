@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between z-50">
+  <div class="section flex justify-between z-50 pb-10">
     <div v-for="item in social" :key="item.id">
       <a href="#"><img :src="item.img" alt="" /></a>
     </div>
@@ -17,3 +17,11 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+@media (max-width: 640px) {
+  .section {
+    @apply justify-start gap-2;
+  }
+}
+</style>

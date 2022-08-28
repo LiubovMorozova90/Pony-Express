@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-10">
     <div v-for="info in information" :key="info.id" class="footer-content">
       <p v-html="info.title" />
     </div>

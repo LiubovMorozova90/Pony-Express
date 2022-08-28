@@ -2,7 +2,7 @@
   <footer class="bg-black">
     <div class="container block">
       <div class="pt-12">
-        <div class="flex justify-between">
+        <div class="content flex justify-between">
           <div class="footer-main">
             <p class="footer-title">Компания</p>
             <LandingFooterCompany />
@@ -86,11 +86,23 @@ export default {
   .container {
     max-width: 668px;
   }
+
+  footer {
+    margin-top: 600px;
+  }
 }
 
 @media (max-width: 640px) {
   .container {
     max-width: 540px;
+  }
+
+  footer {
+    margin-top: 700px;
+  }
+
+  .content {
+    @apply flex flex-col;
   }
 }
 
@@ -104,11 +116,19 @@ export default {
   .container {
     max-width: 400px;
   }
+
+  footer {
+    margin-top: 800px;
+  }
 }
 
 @media (max-width: 395px) {
   .container {
     max-width: 350px;
+  }
+
+  footer {
+    margin-top: 900px;
   }
 }
 </style>

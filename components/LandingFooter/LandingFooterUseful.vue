@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-10">
     <div v-for="item in useful" :key="item.id" class="footer-content">
       <p v-html="item.title" />
     </div>
