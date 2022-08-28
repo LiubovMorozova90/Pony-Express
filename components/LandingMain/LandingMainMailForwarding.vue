@@ -1,23 +1,23 @@
 <template>
-  <div class="flex pt-12 pb-4">
+  <div class="content flex pt-12 pb-4">
     <img
       alt=""
       :src="require('@/static/img/info-forwarding-img.png')"
-      class="z-50"
+      class="title-img z-30"
     />
-    <div class="flex flex-col bg-white px-20 py-12 z-50">
+    <div class="main-text flex flex-col bg-white px-20 py-12 z-50">
       <p class="title-text max-w-xl mb-11">Как работает Mail Forwarding</p>
       <div
         v-for="(forwarding, index) in forwardings"
         :key="`forwarding-${index}`"
-        class="flex gap-2 mb-14 pr-28"
+        class="section-main flex gap-2 mb-14 pr-28"
       >
         <img :src="forwarding.img" alt="" />
-        <span class="font-normal text-lg leading-7">{{
+        <span class="text font-normal text-lg leading-7">{{
           forwarding.description
         }}</span>
       </div>
-      <button class="btn border border-greenbasic text-greenbasic w-60">
+      <button class="btn border border-greenbasic text-greenbasic w-60 z-50">
         Получить адрес за рубежом
       </button>
     </div>
@@ -60,5 +60,74 @@ export default {
 
 .btn {
   @apply text-center rounded-full font-bold text-base leading-6 px-4 py-2;
+}
+
+@media (max-width: 1280px) {
+  .title-img {
+    @apply relative;
+  }
+
+  .main-text {
+    @apply absolute max-w-3xl mt-96 ml-96;
+  }
+
+  .content {
+    @apply pb-96;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-text {
+    @apply ml-72;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-text {
+    @apply ml-40;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-text {
+    @apply ml-20;
+  }
+
+  .title-text {
+    @apply text-5xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-text {
+    @apply ml-5;
+  }
+
+  .section-main {
+    @apply pr-0;
+  }
+}
+
+@media (max-width: 540px) {
+  .main-text {
+    @apply -ml-14 mt-80 pr-12;
+  }
+
+  .btn {
+    background: #76bc21;
+    border: none;
+    min-width: 350px;
+    color: white;
+  }
+
+  .title-text {
+    @apply text-3xl leading-9;
+  }
+}
+
+@media (max-width: 440px) {
+  .main-text {
+    @apply mt-72;
+  }
 }
 </style>

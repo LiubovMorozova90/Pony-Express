@@ -59,10 +59,6 @@
       <LandingMainServices />
       <LandingMainForwarding />
     </div>
-
-    
-    
-    
   </main>
 </template>
 

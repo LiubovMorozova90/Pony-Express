@@ -44,6 +44,12 @@
   @apply font-extrabold text-7xl tracking-wide;
 }
 
+@media (max-width: 1024px) {
+  .content-hidden {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .title-text {
     @apply text-5xl;
@@ -52,10 +58,6 @@
 
 @media (max-width: 640px) {
   .img-hidden {
-    display: none;
-  }
-
-  .content-hidden {
     display: none;
   }
 

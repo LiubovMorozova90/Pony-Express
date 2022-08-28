@@ -1,11 +1,11 @@
 <template>
-  <div class="max-w-7xl mb-10">
+  <div class="content max-w-7xl mb-10">
     <client-only>
       <agile ref="carousel" :options="sliderOptions">
         <div
           v-for="shop in shops"
           :key="shop.id"
-          class="cursor-pointer w-80 h-64 mb-6"
+          class="slide cursor-pointer w-80 h-64 mb-6"
         >
           <img :src="shop.img" alt="" />
         </div>
@@ -23,6 +23,32 @@ export default {
       dots: true,
       navButtons: false,
       slidesToShow: 4,
+      responsive: [
+        {
+          breakpoint: 1440,
+          settings: {
+            slidesToShow: 4,
+          },
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 350,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
     },
     shops: [
       { img: require('~/static/img/slider-shop-amazon.svg') },
@@ -35,6 +61,88 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+@media (max-width: 1280px) {
+  .content {
+    max-width: 1100px;
+  }
+
+  .slide {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    max-width: 900px;
+  }
+
+  .slide {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 840px) {
+  .content {
+    max-width: 740px;
+  }
+
+  .slide {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 668px;
+  }
+
+  .slide {
+    padding-left: 190px;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    max-width: 540px;
+  }
+
+  .slide {
+    padding-left: 120px;
+  }
+}
+
+@media (max-width: 540px) {
+  .content {
+    max-width: 440px;
+  }
+
+  .slide {
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 440px) {
+  .content {
+    max-width: 400px;
+  }
+
+  .slide {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 395px) {
+  .content {
+    max-width: 350px;
+  }
+
+  .slide {
+    padding-left: 10px;
+  }
+}
+</style>
 
 <style>
 .agile {

@@ -81,5 +81,11 @@ export default {
   .text-t {
     @apply text-lg;
   }
+
+  .btn {
+    background: #76bc21;
+    border: none;
+    min-width: 350px;
+  }
 }
 </style>
