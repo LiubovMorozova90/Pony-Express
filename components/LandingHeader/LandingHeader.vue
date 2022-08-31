@@ -3,6 +3,7 @@
     <div class="container block">
       <div class="flex justify-between gap-5">
         <img :src="require('@/static/img/header-navigation-logo.svg')" alt="" />
+        <!-- TODO: не смысла навешивать класс на компонент тут, если можно сделать это внутри компонента -->
         <LandingHeaderNavigation class="header-nav" />
       </div>
       <div class="title flex flex-col justify-start pb-20">
