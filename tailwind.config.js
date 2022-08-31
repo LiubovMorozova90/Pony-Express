@@ -1,6 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
+  mode: 'jit',
   theme: {
     extend: {
       colors: {
@@ -13,15 +12,15 @@ module.exports = {
         main: '#F5F5F5',
         dots: '#326544',
       },
-      fontFamily:  {
+      fontFamily: {
         circe: 'Circe',
       },
       width: {
-        '2050': '2050px',
+        2050: '2050px',
       },
       height: {
-        '800': '800px'
-      }
-    }
-  }
+        800: '800px',
+      },
+    },
+  },
 }
